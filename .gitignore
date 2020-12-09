@@ -591,3 +591,6 @@ eventup/media/
 
 # Migrations
 users/migrations/
+events/migrations/
+karel/migrations/
+blog/migrations/
