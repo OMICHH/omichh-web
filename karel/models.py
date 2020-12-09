@@ -2,7 +2,7 @@ from django.db import models
 from blog.models import Tag
 
 
-class Problems(models.Model):
+class Problem(models.Model):
     problem_name = models.CharField(max_length=150)
     url = models.URLField(max_length=255)
 
@@ -14,7 +14,7 @@ class Karel(models.Model):
 
     title = models.CharField(max_length=150)
     tag = models.ManyToManyField(Tag)
-    problem_set = models.ManyToManyField(Problems)
+    problem_set = models.ManyToManyField(Problem)
     order = models.IntegerField()
     video_url = models.URLField(max_length=255)
 
