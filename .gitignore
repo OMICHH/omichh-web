@@ -588,3 +588,6 @@ eventup/media/
 # Environment
 .envs/
 .vscode/
+
+# Migrations
+users/migrations/
