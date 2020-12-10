@@ -10,7 +10,7 @@ class Problem(models.Model):
         return str(self.problem_name)
 
 
-class Karel(models.Model):
+class KarelVideo(models.Model):
 
     title = models.CharField(max_length=150)
     tag = models.ManyToManyField(Tag)

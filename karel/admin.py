@@ -1,5 +1,5 @@
 from django.contrib import admin
-from karel.models import  Problem, Karel
+from karel.models import  Problem, KarelVideo
 
 
 @admin.register(Problem)
@@ -10,7 +10,7 @@ class ProblemAdmin(admin.ModelAdmin):
     search_fields = ('problem_name',)
 
 
-@admin.register(Karel)
+@admin.register(KarelVideo)
 class KarelAdmin(admin.ModelAdmin):
 
     list_display = ('order', 'title', 'video_url')
