@@ -1,0 +1,29 @@
+{% extends 'users/base.html' %}
+
+{% block head_content %}
+    <title>Sign In</title>
+{% endblock head_content %}
+
+{% block container %}
+    <div class="conatiner d-flex mt-5 p-0 rounded border shadow">
+        <div class="container p-5">
+            <h3 class="mt-5 text-center">Inicia Sesion</h3>
+            {% if error %}
+                <p class="mt-5 alert alert-danger mb-3 w-75 mx-auto d-block" role="alert">{{error}}</p>
+            {% endif %}
+
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="form-group mt-5">
+                    <input class="form-control mb-3 w-75 mx-auto d-block" type="text" placeholder="Username" name="username" />
+                    <input class="form-control w-75 mx-auto d-block" type="password" placeholder="Password" name="password" />
+                </div>
+                <button class="btn btn-success btn-block mt-5 w-50 mx-auto d-block" type="submit">Iniciar Sesion</button>
+
+                <div class= "d-flex flex-column mt-3">
+                    <p class="m-auto">Aun no tienes una cuenta, <a href={% url 'login' %} style="color:#87C639;">Registrate.</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock container %}
