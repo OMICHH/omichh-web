@@ -15,5 +15,9 @@ urlpatterns = [
     # Users Views
     path('', users_views.landing_view, name='landing'),
     path('login/', users_views.login_view, name='login'),
-    path('home/', users_views.dashboard, name='dashboard')
+    path('logout/', users_views.logout_view, name='logout'),
+    path('singup/', users_views.sing_up_view, name='singup'),
+    path('home/', users_views.dashboard, name='dashboard'),
+
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
