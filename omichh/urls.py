@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path
+from django.views.decorators.csrf import csrf_exempt
 
 # Static files config
 from django.conf import settings
@@ -19,5 +20,7 @@ urlpatterns = [
     path('singup/', users_views.sing_up_view, name='singup'),
     path('home/', users_views.dashboard, name='dashboard'),
 
+    #Verification user
+    path('activate/<uidb64>/<token>', users_views.VerificationView.as_view(), name='activate'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

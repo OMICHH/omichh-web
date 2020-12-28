@@ -54,7 +54,7 @@ class Student(models.Model):
     school = models.ForeignKey(School,on_delete=models.SET_NULL, null=True)
     birthdate = models.DateField(blank=True, null=True)
     name_of_tutor = models.CharField(max_length=150, blank=True, null=False)
-    phone_of_tutor = PhoneNumberField(null=False, blank=False, unique=True)
+    phone_of_tutor = PhoneNumberField(null=True, blank=False, unique=True)
     tutor_email = models.EmailField(max_length=254)
     omegaup_user = models.CharField(max_length=150)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)

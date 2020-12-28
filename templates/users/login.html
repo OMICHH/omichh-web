@@ -14,6 +14,9 @@
 
             <form method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
+
+                {% include 'partials/_messages.html' %}
+
                 <div class="form-group mt-5">
                     <input class="form-control mb-3 w-75 mx-auto d-block" type="text" placeholder="Username" name="username" />
                     <input class="form-control w-75 mx-auto d-block" type="password" placeholder="Password" name="password" />

@@ -1,8 +1,19 @@
 # Django
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.sites.shortcuts import get_current_site
+from django.contrib import messages
+from django.shortcuts import render, redirect
 from django.db.utils import IntegrityError
+from django.core.mail import EmailMessage, send_mail
+from django.utils.encoding import force_bytes, force_text, DjangoUnicodeDecodeError
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django.urls import reverse
+
+from .utils import account_activation_token
+
+#Views
+from django.views import View
 
 #Models
 from django.contrib.auth.models import User
@@ -17,11 +28,19 @@ def login_view(request):
 
         user = authenticate(request, username=username, password=password)
 
+
         if user:
             login(request, user)
             return redirect('dashboard')
         else:
-            return render(request,'users/login.html',{'error':'Invalid username and password'})
+            try:
+                user = User.objects.get(username=username)
+                if user.is_active == False:
+                    return render(request,'users/login.html',{'error':'Verify your email to activate your account'})
+
+                return render(request,'users/login.html',{'error':'Invalid username and password'})
+            except:
+                return render(request,'users/login.html',{'error':'Invalid username and password'})
 
     return render(request, 'users/login.html')
 
@@ -51,7 +70,30 @@ def sing_up_view(request):
         user.first_name = request.POST['first_name']
         user.last_name = request.POST['last_name']
         user.email = request.POST['email']
+        user.is_active = False
         user.save()
+
+        current_site = get_current_site(request)
+        email_subject = 'Activate your account'
+        email_body = {
+                    'user': user,
+                    'domain': current_site.domain,
+                    'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                    'token': account_activation_token.make_token(user),
+        }
+
+        link = reverse('activate', kwargs={'uidb64': email_body['uid'], 'token': email_body['token']})
+        activate_url = 'http://'+current_site.domain+link
+
+
+        email = EmailMessage(
+            email_subject,
+            'Hola '+user.username + ', Por favor da click en el siguiente link para activar tu cuenta. \n'+activate_url,
+            'no_reply@omichh.org',
+            [user.email],
+        )
+
+        email.send(fail_silently=False)
 
         type_of_user = request.POST['type']
         if type_of_user == 'coach':
@@ -61,9 +103,34 @@ def sing_up_view(request):
             profile = Student(student_user=user)
             profile.save()
 
+        messages.success(request,'La cuenta se creo con exito revisa tu bandeja de entrada para activarla')
         return redirect('login')
 
     return render(request,'users/singup.html')
+
+
+class VerificationView(View):
+    def get(self, request, uidb64, token):
+        try:
+            id = force_text(urlsafe_base64_decode(uidb64))
+            user = User.objects.get(pk=id)
+
+            if not account_activation_token.check_token(user, token):
+                return redirect('login'+'?message='+'User already activated')
+
+            if user.is_active:
+                return redirect('login')
+            user.is_active = True
+            user.save()
+
+            messages.success(request, 'Tu cuenta se ha activado con exito')
+            return redirect('login')
+
+        except Exception as ex:
+            pass
+
+        return redirect('login')
+
 
 @login_required
 def dashboard(request):
