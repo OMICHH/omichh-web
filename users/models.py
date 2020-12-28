@@ -33,9 +33,8 @@ class Coach(models.Model):
 
     coach_user = models.OneToOneField(User, on_delete=models.CASCADE)
     school = models.ManyToManyField(School)
-    coach_email = models.EmailField(max_length=254)
     birthdate = models.DateField(blank=True, null=True)
-    phone = PhoneNumberField(null=False, blank=False, unique=True)
+    phone = PhoneNumberField(null=True, blank=True, unique=True)
     omegaup_user = models.CharField(max_length=150)
     category = models.ManyToManyField(Category)
 

@@ -7,9 +7,9 @@ from users.models import Coach, Student, School, Category
 
 @admin.register(Coach)
 class CoachAdmin(admin.ModelAdmin):
-    list_display = ('coach_user', 'coach_email','omegaup_user')
-    list_display_links = ('coach_user','coach_email','omegaup_user')
-    search_fields = ('coach_user','coach_email','omegaup_user')
+    list_display = ('coach_user','omegaup_user')
+    list_display_links = ('coach_user','omegaup_user')
+    search_fields = ('coach_user','omegaup_user')
     list_filter =  ('coach_user__is_active',)
 
 

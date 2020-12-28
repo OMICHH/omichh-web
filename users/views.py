@@ -63,6 +63,12 @@ def sing_up_view(request):
             return render(request, 'users/singup.html', {'error': 'Password do not match'})
 
         try:
+            if User.objects.get(email = request.POST['email']):
+                return render(request, 'users/singup.html', {'error': 'Email has alredy taken'})
+        except:
+            pass
+
+        try:
             user = User.objects.create_user(username=username, password=password)
         except IntegrityError:
             return render(request, 'users/singup.html',{'error':'Username already taken'})
@@ -74,7 +80,7 @@ def sing_up_view(request):
         user.save()
 
         current_site = get_current_site(request)
-        email_subject = 'Activate your account'
+        email_subject = 'Activación de cuenta'
         email_body = {
                     'user': user,
                     'domain': current_site.domain,
@@ -88,7 +94,7 @@ def sing_up_view(request):
 
         email = EmailMessage(
             email_subject,
-            'Hola '+user.username + ', Por favor da click en el siguiente link para activar tu cuenta. \n'+activate_url,
+            'Hola '+ user.get_full_name() + ', Por favor da click en el siguiente enlace para activar tu cuenta. \n'+activate_url,
             'no_reply@omichh.org',
             [user.email],
         )
