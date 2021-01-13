@@ -4,6 +4,11 @@ html, body{
    font-family:'Noto Sans', sans-serif !important;
 }
 
+.btn {
+    border-radius: 2rem !important;
+    font-weight: 700 !important;
+}
+
 .bg-OMICH{  
    background: #0091BF;
 
@@ -11,7 +16,7 @@ html, body{
 
 .text-OMICH-1{
     color: white !important;
-   font-size:x-small;
+    font-size:x-small;
 
 }
 
