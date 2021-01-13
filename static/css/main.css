@@ -3,3 +3,27 @@
 html, body{
    font-family:'Noto Sans', sans-serif !important;
 }
+
+.bg-OMICH{  
+   background: #0091BF;
+
+}
+
+.text-OMICH-1{
+    color: white !important;
+   font-size:x-small;
+
+}
+
+.burger-white.navbar-toggler {
+    border-color: white;
+}
+
+#header img{
+    height: 30px;
+
+}
+
+.Redes{
+    height: 28px;
+}
