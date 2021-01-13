@@ -10,20 +10,35 @@ html, body{
 }
 
 .text-OMICH-1{
-    color: white !important;
+   color: white !important;
+   font-size:xx-small;
+
+}
+
+.text-OMICH-2{
+   color: rgba(255, 255, 255, 0.8) !important;
    font-size:x-small;
 
 }
 
-.burger-white.navbar-toggler {
-    border-color: white;
+#header img{
+   height: 40px;
+   
 }
 
-#header img{
-    height: 30px;
+#header span{
+   width: 20px;
+}
 
+.navbar-toggler{
+   height: 38px;
+}
+
+.burger-white.navbar-toggler {
+    border-color: white !important;
 }
 
 .Redes{
     height: 28px;
+    
 }

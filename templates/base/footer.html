@@ -1,11 +1,24 @@
 {% load static %}
-<footer style="background-color: #0091BF; color:white;">
-    <div class="container-fluid">
-        <ul>
-            <li><a href="#" style="font-weight: 300;">REGISTRO</a></li>
-            <li><a href="#" style="font-weight: 300;">CONVOCATORIA</a></li>
-            <li><a href="#" style="font-weight: 300;">AVISO DE PRIVACIDAD</a></li>
-        </ul>
-        <a href="">contacto@omichh.org</a>
+<footer id="footer" class="pb-4 pt-4">
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-6 col-md-1 text-center">
+              <a href="#" class="nav-link text-OMICH-2">Registro</a>
+          </div>
+          <div class="col-sm-6 col-md-1 text-center">
+              <a href="#" class="nav-link text-OMICH-2">Contacto</a>
+          </div>
+          <div class="col-sm-6 col-md-2 text-center">
+              <a href="#" class="nav-link text-OMICH-2">Aviso de Privacidad</a>
+          </div>
+          <div class="col-sm-6 col-md-2 offset-md-4 text-center">
+              <a href="#" class="nav-link text-OMICH-2">contacto@omich.org</a>
+          </div>
+          <div class="col-12 col-md-2 text-center">
+            <a href=""><img src="{% static 'img/facebook.svg' %}" alt="White Facebook logo" class="Redes"></a>
+            <a href=""><img src="{% static 'img/white-github-logo.png' %}" alt="White Github logo" class="Redes"></a>
+            <a href=""><img src="{% static 'img/white-twitter-logo.png' %}" alt="White Twitter logo" class="Redes"></a>
+          </div>
+      </div>
     </div>
-</footer>
+  </footer>
