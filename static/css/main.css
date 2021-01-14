@@ -1,25 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;700;900&display=swap');
 
 html, body{
    font-family:'Noto Sans', sans-serif !important;
 }
 
-.btn {
-    border-radius: 2rem !important;
-    font-weight: 700 !important;
-}
-
-.bg-OMICH{  
+.bg-OMICHH{  
    background: #0091BF;
-
 }
 
-.text-OMICH-1{
+.text-OMICHH-1{
    color: white !important;
    font-size:xx-small;
 }
 
-.text-OMICH-2{
+.text-OMICHH-2{
    color: rgba(255, 255, 255, 0.8) !important;
    font-size:x-small;
 
@@ -46,3 +41,186 @@ html, body{
     height: 28px;
     
 }
+.first-container{
+   margin-top: 5em;
+}
+/* IMAGE */
+.img-container {
+   width: 50%;
+}
+/**/
+
+/* INPUTS */
+input{
+   background: #FFFFFF !important;
+   border: 2px solid #FFFFFF !important;
+   box-sizing: border-box !important;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+   border-radius: 2rem !important;
+}
+.form-primary input{
+   border-color: #FFFFFF !important;
+}
+.form-secondary input{
+   border-color: #0091BF !important;
+}
+
+select{
+   background-color: #FFFFFF;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+   border: 2px solid #FFFFFF !important;
+   border-radius: 0.5em;
+}
+.form-primary select{
+   border-color: #FFFFFF !important;
+}
+.form-secondary select{
+   border-color: #0091BF !important;
+}
+
+.form-group p{
+   font-family: Noto Sans;
+   font-style: normal;
+   font-weight: bold;
+   line-height: 1vh;
+   padding-left: 1vw;
+}
+.form-primary .form-group p{
+   color: #FFFFFF !important;
+}
+.form-secondary .form-group p{
+   color: #0091BF !important;
+}
+.form-singin .error-container{
+   background-color: #ffd8d8;
+   width: fit-content;
+   margin: auto;
+   border: 2px solid #ec5f5f;
+   border-radius: 0.5em;
+   padding: 0.1em 0.5em;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+}
+.form-singin .error{
+   font-size: 0.7em;
+   color: #d13131;
+}
+/**/
+
+/* BUTTONS */
+.btn {
+   border-radius: 2rem !important;
+   font-weight: 700 !important;
+   background-color: #FFFFFF !important;
+   box-sizing: border-box !important;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+  
+   font-family: Noto Sans !important;
+   font-style: normal !important;
+   font-weight: bold !important;
+   line-height: 1vw;
+
+   display: flex !important;
+   align-items: center !important;
+   text-align: center !important;
+
+   color: #0091BF !important;
+
+   min-width: 10rem !important;
+   padding: 1em !important;
+}
+
+.button-primary {
+   border: 3px solid #FFFFFF !important;
+}
+.button-primary:hover {
+   background-color: #dfdfdf !important;
+   border-color: #dfdfdf !important;
+}
+.button-primary:active {
+   background-color: #ffffff !important;
+   border-color: #ffffff !important;
+   box-shadow: 0 0 0 0.25rem rgba(243, 243, 243, 0.5) !important;
+}
+.button-secondary {
+   border: 3px solid #0091BF !important;
+}
+.button-secondary:hover {
+   background-color: #dfdfdf !important;
+   border-color: #0069a7 !important;
+}
+.button-secondary:active {
+   background-color: #ffffff !important;
+   border-color: #007cc3 !important;
+   box-shadow: 0 0 0 0.25rem rgba(0, 129, 235, 0.5) !important;
+}
+
+.form-primary .button {
+   border: 3px solid #FFFFFF !important;
+}
+.form-primary .button:hover {
+   background-color: #dfdfdf !important;
+   border-color: #dfdfdf !important;
+}
+.form-primary .button:active {
+   background-color: #ffffff !important;
+   border-color: #ffffff !important;
+   box-shadow: 0 0 0 0.25rem rgba(243, 243, 243, 0.5) !important;
+}
+.form-secondary .button {
+   border: 3px solid #0091BF !important;
+}
+.form-secondary .button:hover {
+   background-color: #dfdfdf !important;
+   border-color: #0069a7 !important;
+}
+.form-secondary .button:active {
+   background-color: #ffffff !important;
+   border-color: #007cc3 !important;
+   box-shadow: 0 0 0 0.25rem rgba(0, 129, 235, 0.5) !important;
+}
+/**/
+
+/* FORMS */
+.form-singin {
+   width: 100%;
+   max-width: 330px;
+   padding: 15px;
+   margin: auto;
+   border-radius: 30px !important;
+}
+.form-primary {
+   background-color: #0091BF;
+   mix-blend-mode: normal;
+   border: 5px solid #FFFFFF;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 30px;
+}
+.form-secondary {
+   background-color: #F7F7F7;
+   mix-blend-mode: normal;
+   border: 5px solid #0091BF;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 30px;
+}
+
+
+.form-footer p{
+   font-family: Noto Sans SC;
+   font-style: normal;
+   font-weight: 100;
+   font-size: 0.8em;
+
+   text-align: center;
+}
+.form-primary .form-footer p{
+   color: #FFFFFF !important;
+}
+.form-secondary .form-footer p{
+   color: #0091BF !important;
+}
+.form-footer a{
+   text-decoration: none;
+   font-weight: 700;
+   color: inherit;
+}
+/**/

@@ -4,39 +4,45 @@
     <title>Sign Up</title>
 {% endblock head_content %}
 
-{% block container %}
-    <div class="conatiner d-flex mt-5 p-0 rounded border shadow">
-        <div class="container p-5">
-            <h3 class="mt-5 text-center">Inicia Sesion</h3>
+{% load static %}
 
+{% block container %}
+    <div class="first-container container d-flex p-0">
+        {% include 'partials/forms.html' with function="openForm" form_style="primary" %}
+            <div class="img-container p-2 m-auto mb-4 d-flex">
+                <img src="{% static 'img/white-OMICHH-logo.png' %}" class="img-fluid" alt="OMICHH logo">
+            </div>
             {% if error %}
-                <p class="mt-5 alert alert-danger mb-3 w-75 mx-auto d-block" role="alert">{{error}}</p>
+                <p class="mt-5 alert alert-danger mb-3 mx-auto d-block" role="alert">{{error}}</p>
             {% endif %}
 
             <form method="POST" action="{% url 'singup' %}">
                 {% csrf_token %}
                 <div class="form-group mt-4">
-                    <p class= "w-75 mx-auto d-block">Nombre(s)</p>
-                    <input class="form-control mb-3 w-75 mx-auto d-block" type="text" placeholder="Nombres" name="first_name" required="true"/>
-                    <p class= "w-75 mx-auto d-block">Apellido(s)</p>
-                    <input class="form-control mb-3 w-75 mx-auto d-block" type="text" placeholder="Apellidos" name="last_name" required="true"/>
-                    <p class= "w-75 mx-auto d-block">Username</p>
-                    <input class="form-control mb-3 w-75 mx-auto d-block" type="text" placeholder="Username" name="username" required="true"/>
-                    <p class= "w-75 mx-auto d-block">Correo electrónico</p>
-                    <input class="form-control mb-3 w-75 mx-auto d-block" type="text" placeholder="Correo" name="email" required="true"/>
-                    <p class= "w-75 mx-auto d-block">Contraseña</p>
-                    <input class="form-control mb-3 w-75 mx-auto d-block" type="password" placeholder="Contraseña" name="password" required="true"/>
-                    <p class= "w-75 mx-auto d-block">Confirma tu contraseña</p>
-                    <input class="form-control w-75 mx-auto d-block" type="password" placeholder="Confirma tu contraseña" name="password_confirm" required="true"/>
-                    <label class="mt-3 mb-3 w-75 mx-auto d-block" for="inlineFormCustomSelect">Selecciona una opción</label>
-                    <select class="custom-select w-75 mx-auto d-block" type="text" name="type" required="true" id="inlineFormCustomSelect">
-                        <option selected>Seleccina una opción... </option>
+                    <p class= "mx-auto d-block">Nombre(s)</p>
+                    <input class="form-control mb-3 mx-auto d-block" type="text" placeholder="Nombres" name="first_name" required="true"/>
+                    <p class= "mx-auto d-block">Apellido(s)</p>
+                    <input class="form-control mb-3 mx-auto d-block" type="text" placeholder="Apellidos" name="last_name" required="true"/>
+                    <p class= " mx-auto d-block">Usuario</p>
+                    <input class="form-control mb-3 mx-auto d-block" type="text" placeholder="Usuario" name="username" required="true"/>
+                    <p class= "mx-auto d-block">Correo electrónico</p>
+                    <input class="form-control mb-3 mx-auto d-block" type="text" placeholder="Correo electrónico" name="email" required="true"/>
+                    <p class= "mx-auto d-block">Contraseña</p>
+                    <input class="form-control mb-3 mx-auto d-block" type="password" placeholder="Contraseña" name="password" required="true"/>
+                    <p class= "mx-auto d-block">Confirma tu contraseña</p>
+                    <input class="form-control mb-3 mx-auto d-block" type="password" placeholder="Contraseña" name="password_confirm" required="true"/>
+                    <p class= "mx-auto d-block">Selecciona una opción...</p>
+                    <select class="custom-select mx-auto d-block" type="text" name="type" required="true" id="inlineFormCustomSelect">
+                        <option selected>Selecciona una opción... </option>
                         <option value="coach">Asesor</option>
                         <option value="student">Estudiante</option>
                     </select>
                 </div>
-                <button class="btn btn-success btn-block mt-5 w-50 mx-auto d-block" type="submit">Crear cuenta</button>
+                {% include 'partials/button.html' with text_content="Crear cuenta" type="submit" %}
+                <div class= "d-flex flex-column mt-4 form-footer">
+                    <p class="m-auto">Ya tienes una cuenta, <a href={% url 'login' %}>Inicia sesión.</a></p>
+                </div>
             </form>
-        </div>
+        {% include 'partials/forms.html' with function="closeForm"%}
     </div>
 {% endblock container %}
