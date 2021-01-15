@@ -22,7 +22,7 @@ urlpatterns = [
     path('home/', users_views.dashboard, name='dashboard'),
 
     #General Views
-    path('about-it/', TemplateView.as_view(template_name="index/about-it.html"), name='about-it'),
+    path('about/', TemplateView.as_view(template_name="index/about.html"), name='about'),
     path('contact-us/', TemplateView.as_view(template_name="index/contact-us.html"), name='contact-us'),
 
     #Verification user
