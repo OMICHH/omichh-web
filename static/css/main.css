@@ -11,12 +11,12 @@ html, body{
 
 .text-OMICHH-1{
    color: white !important;
-   font-size:xx-small;
+   /* font-size:xx-small; */
 }
 
 .text-OMICHH-2{
    color: rgba(255, 255, 255, 0.8) !important;
-   font-size:x-small;
+   font-size:small;
 
 }
 
