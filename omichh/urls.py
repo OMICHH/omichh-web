@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import TemplateView
 
 # Static files config
 from django.conf import settings
@@ -19,6 +20,10 @@ urlpatterns = [
     path('logout/', users_views.logout_view, name='logout'),
     path('singup/', users_views.sing_up_view, name='singup'),
     path('home/', users_views.dashboard, name='dashboard'),
+
+    #General Views
+    path('about-it/', TemplateView.as_view(template_name="index/about-it.html"), name='about-it'),
+    path('contact-us/', TemplateView.as_view(template_name="index/contact-us.html"), name='contact-us'),
 
     #Verification user
     path('activate/<uidb64>/<token>', users_views.VerificationView.as_view(), name='activate'),
