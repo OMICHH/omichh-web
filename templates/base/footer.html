@@ -1,43 +1,28 @@
 {% load static %}
-<footer id="footer" class="pb-4 pt-4">
+<footer id="footer" class="">
     <div class="container">
       <div class="row">
-          <div class="col-6 col-md-1 text-center">
+          <div class="col-6 col-lg-1 text-center">
               <a href="#" class="nav-link">Registro</a>
           </div>
-          <div class="col-6 col-md-1 text-center">
+          <div class="col-6 col-lg-1 text-center">
               <a href="#" class="nav-link">Contacto</a>
           </div>
-          <div class="col-6 col-md-3 text-center">
+          <div class="col-6 col-lg-3 text-center">
               <a href="#" class="nav-link">Aviso de Privacidad</a>
           </div>
-          <div class="col-6 col-md-2 offset-md-3 text-center">
+          <div class="col-6 col-lg-2 offset-lg-3 text-center">
               <a href="#" class="nav-link">contacto@OMICHH.org</a>
           </div>
-          <div class="col-12 col-md-2 text-center">
-            <a href="">
-            <img src="
-            {% if style == "primary" %}
-                {% static 'img/white-facebook-logo.png' %}
-            {% elif style == "secondary" %}
-                {% static 'img/blue-facebook-logo.png' %}
-            {% endif %}"
+          <div class="col-12 col-lg-2 d-flex justify-content-center align-items-center">
+            <a href="" class="Redes">
+            <img src="{% if style == "primary" %}{% static 'img/white-facebook-logo.png' %}{% elif style == "secondary" %}{% static 'img/blue-facebook-logo.png' %}{% endif %}"
             alt="Facebook logo" class="Redes">
             </a>
-            <a href=""><img src="
-            {% if style == "primary" %}
-                {% static 'img/white-github-logo.png' %}
-            {% elif style == "secondary" %}
-                {% static 'img/blue-github-logo.png' %}
-            {% endif %}"
+            <a href="" class="Redes"><img src="{% if style == "primary" %}{% static 'img/white-github-logo.png' %}{% elif style == "secondary" %}{% static 'img/blue-github-logo.png' %}{% endif %}"
              alt="Github logo" class="Redes">
              </a>
-            <a href=""><img src="
-            {% if style == "primary" %}
-                {% static 'img/white-twitter-logo.png' %}
-            {% elif style == "secondary" %}
-                {% static 'img/blue-twitter-logo.png' %}
-            {% endif %}"
+            <a href="" class="Redes"><img src="{% if style == "primary" %}{% static 'img/white-twitter-logo.png' %}{% elif style == "secondary" %}{% static 'img/blue-twitter-logo.png' %}{% endif %}"
             alt="Twitter logo" class="Redes">
             </a>
           </div>

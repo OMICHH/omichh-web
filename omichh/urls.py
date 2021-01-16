@@ -23,7 +23,7 @@ urlpatterns = [
 
     #General Views
     path('about-it/', TemplateView.as_view(template_name="index/about-it.html"), name='about-it'),
-    path('contact-us/', TemplateView.as_view(template_name="index/contact-us.html"), name='contact-us'),
+    path('contact/', TemplateView.as_view(template_name="index/contact.html"), name='contact'),
 
     #Verification user
     path('activate/<uidb64>/<token>', users_views.VerificationView.as_view(), name='activate'),
