@@ -147,3 +147,6 @@ def dashboard(request):
 def landing_view(request):
     return render(request, 'base/landing.html')
 
+@login_required
+def contact_view(request):
+    return render(request, 'index/contact.html')
