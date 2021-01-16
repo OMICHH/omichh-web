@@ -4,9 +4,26 @@
     <title>OMICHH</title>
 {% endblock head_content %}
 
+{% load static %}
+
 {% block container %}
-    <div class="first-container container">
-        <h1 class="mt-5 pt-1">Contenido</h1>
+    <!-- <div class="first-container container mt-5 pt-1">
+        <h1 class="">Contenido</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt veniam quos earum, culpa molestiae velit dolorum pariatur natus, consequuntur voluptatum vel magnam cumque, vitae modi vero ea. Iure, exercitationem consequatur!</p>
+    </div> -->
+
+    <div class="container mt-5 pt-3 ">
+        <div class="row">
+            <div class="col-12 col-lg-6 align-self-center mb-2">
+                <h2>Buscamos a los mejores programadores de Chihuahua</h2>
+                <p>La OMICHH es un concurso en el que sobre todo se requiere tener **facilidad, habilidad y voluntad de resolver problemas** utilizando la lógica, ingenio y las computadoras.</p>
+                {% include 'partials/button.html' with text_content="Participa" type="submit" %}
+            </div>
+            <div class="col-12 col-lg-6 align-self-center">
+                <img src="{% static 'img/medallas.png' %}" alt="Medallas" width="100%">
+            </div>
+        </div>
     </div>
+    
+
 {% endblock container %}
