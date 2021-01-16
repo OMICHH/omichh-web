@@ -11,20 +11,26 @@
           <div class="col-12 col-lg-3 text-center">
               <a href="#" class="nav-link">Aviso de Privacidad</a>
           </div>
-          <div class="col-12 col-lg-2 offset-lg-3 text-center">
+          <div class="col-12 col-lg-3 offset-lg-2 text-center text-break">
               <a href="#" class="nav-link">contacto@OMICHH.org</a>
           </div>
           <div class="col-12 col-lg-2 d-flex justify-content-center align-items-center">
-            <a href="" class="Redes">
-            <img src="{% if style == "primary" %}{% static 'img/white-facebook-logo.png' %}{% elif style == "secondary" %}{% static 'img/blue-facebook-logo.png' %}{% endif %}"
-            alt="Facebook logo" class="Redes">
-            </a>
-            <a href="" class="Redes"><img src="{% if style == "primary" %}{% static 'img/white-github-logo.png' %}{% elif style == "secondary" %}{% static 'img/blue-github-logo.png' %}{% endif %}"
-             alt="Github logo" class="Redes">
-             </a>
-            <a href="" class="Redes"><img src="{% if style == "primary" %}{% static 'img/white-twitter-logo.png' %}{% elif style == "secondary" %}{% static 'img/blue-twitter-logo.png' %}{% endif %}"
-            alt="Twitter logo" class="Redes">
-            </a>
+            {% if style == "primary" %}
+                <a href="" class="Redes"><img src="{% static 'img/white-facebook-logo.png' %}" alt="Facebook logo" class="Redes"></a>
+
+                <a href="" class="Redes"><img src="{% static 'img/white-github-logo.png' %}" alt="Github logo" class="Redes"></a>
+
+                <a href="" class="Redes"><img src="{% static 'img/white-twitter-logo.png' %}" alt="Twitter logo" class="Redes">
+                </a>
+            {% elif style == "secondary" %}
+                <a href="" class="Redes"><img src="{% static 'img/blue-facebook-logo.png' %}" alt="Facebook logo" class="Redes"></a>
+
+                <a href="" class="Redes"><img src="{% static 'img/blue-github-logo.png' %}" alt="Github logo" class="Redes"></a>
+
+                <a href="" class="Redes"><img src="{% static 'img/blue-twitter-logo.png' %}" alt="Twitter logo" class="Redes">
+                </a>
+            {% endif %}
+            
           </div>
       </div>
     </div>

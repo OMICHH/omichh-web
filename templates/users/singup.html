@@ -7,10 +7,14 @@
 {% load static %}
 
 {% block container %}
-    <div class="first-container container d-flex p-0">
-        {% include 'partials/forms.html' with function="openForm" form_style="primary" %}
+    <div class="container d-flex p-0">
+        {% include 'partials/forms.html' with function="openForm" class="m-auto"%}
             <div class="img-container p-2 m-auto mb-4 d-flex">
-                <img src="{% static 'img/white-OMICHH-logo.png' %}" class="img-fluid" alt="OMICHH logo">
+                {% if block.super == "primary" %}
+                    <img src="{% static 'img/white-OMICHH-logo.png' %}" class="img-fluid" alt="OMICHH logo">
+                {% elif block.super == "secondary" %}
+                    <img src="{% static 'img/blue-OMICHH-logo.png' %}" class="img-fluid" alt="OMICHH logo">
+                {% endif %}
             </div>
             {% if error %}
                 <p class="mt-5 alert alert-danger mb-3 mx-auto d-block" role="alert">{{error}}</p>

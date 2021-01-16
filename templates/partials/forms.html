@@ -1,8 +1,46 @@
+{% comment %}
+Instruccion to use forms:
+    1.- Include this template where you need.
+
+    2.- Then, call the "function" argument, with the value = "openForm".
+        {% include 'partials/forms.html' with function="openForm"%}
+
+    3.- If you want to add extra classes to the form, yo can pass them to the "class" argument.
+        {% include 'partials/forms.html' with function="openForm" class="text-right" %}
+
+    4.- To close the form, include this template and call the "function" argument, with the  value "closeForm".
+        open: {% include 'partials/forms.html' with function="openForm"%}
+        close: {% include 'partials/forms.html' with function="closeForm"%}
+
+    5.- Between these lines, write all the content that the form has, and it will automatically adapt to the main style of the page.
+        {% include 'partials/forms.html' with function="openForm"%}
+            <img src="logo.png" alt="logo">
+            <form method="POST" action="{% url 'login' %}">
+                <input type="text">
+                <button></button>
+            </form>
+        {% include 'partials/forms.html' with function="closeForm"%}
+
+Extra information:
+    - If you want the form to have a different style than the page, you can do it with the "style" argument, specifing beetween styles "primary" or "secondary".
+        {% include 'partials/forms.html' with function="openForm" style=form_style %}
+            ...
+        {% include 'partials/forms.html' with function="closeForm"%}
+    This only go to change styles, if you wnat change logo colors, you need change it manually
+    
+    - It is no longer necessary to put the "col" class because because it is already included, and configured to adapt in the best way to the form. However, you can pass the offset "class" if you want to move the form to a specific place.
+        {% include 'partials/forms.html' with function="openForm" class="offset-md-6" %}
+            ...
+        {% include 'partials/forms.html' with function="closeForm"%}
+{% endcomment %}
+
 {% if function == "openForm" %}
-    <div class="form-singin px-4 pt-3 pb-5 form-{{ form_style }} ">
+    <div class="col-11 col-md-6 col-lg-5 {{ class }}">
+        <div class="form m-auto px-4 pt-3 pb-5  {% if style %}form-{{ style }}{% endif %}">
 {% endif %}
 
 {% if function == "closeForm" %}
+        </div>
     </div>
 {% endif %}
 
