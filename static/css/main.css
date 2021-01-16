@@ -8,7 +8,7 @@ html{
    width: 100%;
 }
 body{
-   margin-bottom: 8rem !important;
+   margin-bottom: 18rem !important;
 }
 .style-primary {
    background: #0091BF;
@@ -38,6 +38,10 @@ h1{
    color: rgba(255, 255, 255, 0.8) !important;
    font-size:small;
 
+}
+
+.first-container{
+   margin-top: 5em;
 }
 
 /* HEADER */
@@ -90,14 +94,10 @@ h1{
    height: 28px;
    text-decoration: none;
 }
-/*  */
-
-.first-container{
-   margin-top: 5em;
-}
+/**/
 
 /* IMAGE */
-.img-container {
+.form .img-container {
    width: 50%;
 }
 /**/
@@ -334,5 +334,36 @@ select{
    text-decoration: none;
    font-weight: 700;
    color: inherit;
+}
+/**/
+
+/* MEDIA QUERIES */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+   body{
+      margin-bottom: 12rem !important;
+   }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+   
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+   body{
+      margin-bottom: 8rem !important;
+   }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
 }
 /**/
