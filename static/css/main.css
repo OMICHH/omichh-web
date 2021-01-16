@@ -5,6 +5,7 @@ html{
    font-family:'Noto Sans', sans-serif !important;
    min-height: 100%;
    position: relative;
+   width: 100%;
 }
 body{
    margin-bottom: 8rem !important;
@@ -109,10 +110,16 @@ input{
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
    border-radius: 2rem !important;
 }
-.form-primary input{
+.style-primary input{
    border-color: #ffffff !important;
 }
-.form-secondary input{
+.style-secondary input{
+   border-color: #0091BF !important;
+}
+.form-primary input {
+   border-color: #ffffff !important;
+}
+.form-secondary input {
    border-color: #0091BF !important;
 }
 
@@ -122,10 +129,16 @@ select{
    border: 2px solid #ffffff !important;
    border-radius: 0.5em;
 }
-.form-primary select{
+.style-primary select {
    border-color: #ffffff !important;
 }
-.form-secondary select{
+.style-secondary select {
+   border-color: #0091BF !important;
+}
+.form-primary select {
+   border-color: #ffffff !important;
+}
+.form-secondary select {
    border-color: #0091BF !important;
 }
 
@@ -136,13 +149,19 @@ select{
    line-height: 1vh;
    padding-left: 1vw;
 }
-.form-primary .form-group p{
+.style-primary .form-group p {
    color: #ffffff !important;
 }
-.form-secondary .form-group p{
+.style-secondary .form-group p {
    color: #0091BF !important;
 }
-.form-singin .error-container{
+.form-primary .form-group p {
+   color: #ffffff !important;
+}
+.form-secondary .form-group p {
+   color: #0091BF !important;
+}
+.form .error-container{
    background-color: #ffd8d8;
    width: fit-content;
    margin: auto;
@@ -151,7 +170,7 @@ select{
    padding: 0.1em 0.5em;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
 }
-.form-singin .error{
+.form .error{
    font-size: 0.7em;
    color: #d13131;
 }
@@ -205,6 +224,30 @@ select{
    box-shadow: 0 0 0 0.25rem rgba(0, 129, 235, 0.5) !important;
 }
 
+.style-primary .button {
+   border: 3px solid #ffffff !important;
+}
+.style-primary .button:hover {
+   background-color: #dfdfdf !important;
+   border-color: #dfdfdf !important;
+}
+.style-primary .button:active {
+   background-color: #ffffff !important;
+   border-color: #ffffff !important;
+   box-shadow: 0 0 0 0.25rem rgba(243, 243, 243, 0.5) !important;
+}
+.style-secondary .button {
+   border: 3px solid #0091BF !important;
+}
+.style-secondary .button:hover {
+   background-color: #dfdfdf !important;
+   border-color: #0069a7 !important;
+}
+.style-secondary .button:active {
+   background-color: #ffffff !important;
+   border-color: #007cc3 !important;
+   box-shadow: 0 0 0 0.25rem rgba(0, 129, 235, 0.5) !important;
+}
 .form-primary .button {
    border: 3px solid #ffffff !important;
 }
@@ -217,14 +260,14 @@ select{
    border-color: #ffffff !important;
    box-shadow: 0 0 0 0.25rem rgba(243, 243, 243, 0.5) !important;
 }
-.form-secondary .button {
+.form-secondary .button{
    border: 3px solid #0091BF !important;
 }
 .form-secondary .button:hover {
    background-color: #dfdfdf !important;
    border-color: #0069a7 !important;
 }
-.form-secondary .button:active {
+.form-secondary .button:active{
    background-color: #ffffff !important;
    border-color: #007cc3 !important;
    box-shadow: 0 0 0 0.25rem rgba(0, 129, 235, 0.5) !important;
@@ -232,29 +275,41 @@ select{
 /**/
 
 /* FORMS */
-.form-singin {
-   width: 100%;
+.form {
+   width: 90%;
    max-width: 330px;
    padding: 15px;
    margin: auto;
    border-radius: 30px !important;
 }
-.form-primary {
+.style-primary .form {
    background-color: #0091BF;
    mix-blend-mode: normal;
    border: 5px solid #ffffff;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 30px;
 }
-.form-secondary {
+.style-secondary .form {
    background-color: #F7F7F7;
    mix-blend-mode: normal;
    border: 5px solid #0091BF;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 30px;
 }
-
-
+.form-primary.form {
+   background-color: #0091BF;
+   mix-blend-mode: normal;
+   border: 5px solid #ffffff;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 30px;
+}
+.form-secondary.form {
+   background-color: #F7F7F7;
+   mix-blend-mode: normal;
+   border: 5px solid #0091BF;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 30px;
+}
 .form-footer p{
    font-family: Noto Sans SC;
    font-style: normal;
@@ -263,10 +318,16 @@ select{
 
    text-align: center;
 }
-.form-primary .form-footer p{
+.style-primary .form-footer p{
    color: #ffffff !important;
 }
-.form-secondary .form-footer p{
+.style-secondary .form-footer p{
+   color: #0091BF !important;
+}
+.form-primary .form-footer p {
+   color: #ffffff !important;
+}
+.form-secondary .form-footer p {
    color: #0091BF !important;
 }
 .form-footer a{
