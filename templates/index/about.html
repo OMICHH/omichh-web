@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+
+{% block head_content %}
+    <title>About</title>
+{% endblock head_content %}
+
+{% load static %}
+
+{% block container %}
+    <div class="first-container d-flex container d-flex p-0">
+      <div class="row">
+        <div class="col-8 offset-2 col-lg-6 offset-lg-1 ">
+          <h2 class="mb-4">Olimpiada Mexicana de Informática</h2>
+          <p class="mb-4">La Olimpiada Mexicana de Informática en Chihuahua (OMICHH) es un concurso a nivel estatal para jóvenes y niños con facilidad para resolver problemas prácticos mediante la lógica y el uso de computadoras, que busca promover el desarrollo tecnológico en México y encontrar a los mejores programadores, quienes formarán la selección del estado para participar en las próximas Olimpiadas Nacionales de Informática (OMI) y posteriormente en Olimpiadas Internacionales de Informática (IOI).</p>
+          <p class="mb-4"><i>La OMICHH es un concurso en el que sobre todo se requiere tener facilidad, habilidad y voluntad de resolver problemas utilizando la lógica, el ingenio y las computadoras.</i></p>
+          <h5 class="mb-4">Categoría Primarias y Secundarias</h5>
+          <p>-Examen Pre-Nacional práctico presencial. Fecha tentativa: sábado 25 de Enero de 2020. Fecha por confirmar con el comité de la OMIPS en base al examen nacional de la categoría primarias y secundarias, sede Universidad Autónoma de Chihuahua.<br>
+          -El examen nacional fecha tentativa 8 de Febrero de 2020, sede Universidad Autónoma de Chihuahua.</p>
+          <h5 class="mb-4">Categoría Abierta, Preparatorias</h5>
+          <p>-Segundo Examen Estatal por Internet, del 8 de Febrero de 2020 al 16 de Febrero de 2020.<br>
+            -Tercer Examen Estatal por Internet, 14 de Marzo de 2020 al 27 de Marzo de 2020.<br>
+            -Examen Pre-Nacional práctico presencial, fecha pospuesta por la contingencia de salud COVID-19, Sede Universidad Autónoma de Chihuahua.</p>
+        </div>
+        <div class="col-10 offset-1 col-lg-4 offset-lg-0 d-flex justify-content-center align-items-center">
+          <img src="{% static 'img/Programming-amico.png' %}" class="img-fluid" alt="Programador">
+        </div>
+      </div>
+    </div>
+{% endblock container %}

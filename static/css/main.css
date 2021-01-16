@@ -18,10 +18,10 @@ body{
 h1{
    font-weight: 700;
 }
-.style-primary p, .style-primary h1, .style-primary h2{
+.style-primary *{
    color: #ffffff;
 }
-.style-secondary p, .style-secondary h1, .style-secondary h2{
+.style-secondary *{
    color: #0091BF;
 }
 .bg-OMICHH{  
