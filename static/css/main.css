@@ -191,16 +191,19 @@ select{
    min-width: 10rem !important;
    padding: 0.8em 1em !important;
 }
-
+.btn:hover{
+   background-color: #e9e9e9 !important;
+}
+.btn:active{
+   background-color: #ffffff !important;
+}
 .button-primary {
    border: 3px solid #ffffff !important;
 }
 .button-primary:hover {
-   background-color: #dfdfdf !important;
-   border-color: #dfdfdf !important;
+   border-color: #e9e9e9 !important;
 }
 .button-primary:active {
-   background-color: #ffffff !important;
    border-color: #ffffff !important;
    box-shadow: 0 0 0 0.25rem rgba(243, 243, 243, 0.5) !important;
 }
@@ -208,24 +211,20 @@ select{
    border: 3px solid #0091BF !important;
 }
 .button-secondary:hover {
-   background-color: #dfdfdf !important;
-   border-color: #0069a7 !important;
+   border-color: #0070b1 !important;
 }
 .button-secondary:active {
-   background-color: #ffffff !important;
    border-color: #007cc3 !important;
-   box-shadow: 0 0 0 0.25rem rgba(0, 129, 235, 0.5) !important;
+   box-shadow: 0 0 0 0.25rem rgba(12, 141, 246, 0.5) !important;
 }
 
 .style-primary .button {
    border: 3px solid #ffffff !important;
 }
 .style-primary .button:hover {
-   background-color: #dfdfdf !important;
-   border-color: #dfdfdf !important;
+   border-color: #e9e9e9 !important;
 }
 .style-primary .button:active {
-   background-color: #ffffff !important;
    border-color: #ffffff !important;
    box-shadow: 0 0 0 0.25rem rgba(243, 243, 243, 0.5) !important;
 }
@@ -233,7 +232,7 @@ select{
    border: 3px solid #0091BF !important;
 }
 .style-secondary .button:hover {
-   background-color: #dfdfdf !important;
+   background-color: #e9e9e9 !important;
    border-color: #0069a7 !important;
 }
 .style-secondary .button:active {
