@@ -91,12 +91,12 @@ h1{
 /**/
 
 /* INPUTS */
-input{
+input, textarea{
    background: #ffffff !important;
    border: 2px solid #ffffff !important;
    box-sizing: border-box !important;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
-   border-radius: 2rem !important;
+   border-radius: 1.5rem !important;
 }
 .style-primary input{
    border-color: #ffffff !important;
@@ -109,6 +109,11 @@ input{
 }
 .form-secondary input {
    border-color: #0091BF !important;
+}
+
+textarea{
+   resize: none !important;
+   height: 250px !important;
 }
 
 select{
@@ -130,7 +135,7 @@ select{
    border-color: #0091BF !important;
 }
 
-.form-group p{
+.form form p{
    font-family: Noto Sans;
    font-style: normal;
    font-weight: bold;
@@ -184,7 +189,7 @@ select{
    color: #0091BF !important;
 
    min-width: 10rem !important;
-   padding: 1em !important;
+   padding: 0.8em 1em !important;
 }
 
 .button-primary {
