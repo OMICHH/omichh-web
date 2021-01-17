@@ -1,5 +1,22 @@
+{% comment %} 
+Instructions to use a button:
+    1.- Include this template where you need.
+
+    2.- Then, call the "text_content" argument, with the text that the button will carry.
+        {% include 'partials/forms.html' with text_content="Enviar!"%}
+    
+    3.- You can pass a specific type to button with the "type" argument.
+        {% include 'partials/forms.html' with text_content="Borrar!" type="reset"%}
+    If this argument isn´t passed, then the type of the button will be "submit".
+
+    4.- If you need the button of a style other than the main one of the page, you can with the "style" argument, passing passing a value between "primary" or "secondary".
+        {% include 'partials/forms.html' with text_content="Comparte" style="primary" %}
+
+{% endcomment %}
+
 <div>
-    <button class="btn mx-auto mt-5 d-block button button-{{ style }}" type="{{ type }}">
+    <button class="btn mx-auto mt-5 d-block button button-{{ style }}"
+    type="{% if type %}{{ type }}{% else %}submit{% endif %}">
         {{ text_content }}
     </button>
 </div>

@@ -22,11 +22,16 @@ Instruccion to use forms:
         {% include 'partials/forms.html' with function="closeForm"%}
 
 Extra information:
-    - If you want the form to have a different style than the page, you can do it with the "style" argument, specifing beetween styles "primary" or "secondary".
-        {% include 'partials/forms.html' with function="openForm" style=form_style %}
+    - If you want the form to have a different style than the page, you can do it with the "form_style" argument, specifing beetween styles "primary" or "secondary".
+        {% include 'partials/forms.html' with function="openForm" form_style="primary" %}
             ...
         {% include 'partials/forms.html' with function="closeForm"%}
-    This only go to change styles, if you wnat change logo colors, you need change it manually
+    This only go to change styles, if you wnat change logo colors, you need change it manually.
+    
+    - If you want set any CSS style, you can do it with the "style" argument.
+        {% include 'partials/forms.html' with function="openForm" style="color:#000" %}
+            ...
+        {% include 'partials/forms.html' with function="closeForm"%}
     
     - It is no longer necessary to put the "col" class because because it is already included, and configured to adapt in the best way to the form. However, you can pass the offset "class" if you want to move the form to a specific place.
         {% include 'partials/forms.html' with function="openForm" class="offset-md-6" %}
@@ -35,8 +40,8 @@ Extra information:
 {% endcomment %}
 
 {% if function == "openForm" %}
-    <div class="col-11 col-md-6 col-lg-5 {{ class }}">
-        <div class="form m-auto px-4 pt-3 pb-5  {% if style %}form-{{ style }}{% endif %}">
+    <div class="col-12 col-md-6 col-lg-5 {{ class }}">
+        <div class="form m-auto px-4 pt-4 pb-5  {% if form_style %}form-{{ form_style }}{% endif %}" style="{{ style }}">
 {% endif %}
 
 {% if function == "closeForm" %}
