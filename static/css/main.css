@@ -19,10 +19,10 @@ h1{
    font-weight: 700;
 }
 .style-primary *{
-   color: #ffffff !important;;
+   color: #ffffff;
 }
 .style-secondary *{
-   color: #0091BF !important;;
+   color: #0091BF;
 }
 .bg-OMICHH{  
    background: #0091BF;
@@ -46,7 +46,6 @@ h1{
 .style-secondary #header{
    background-color: #ffffff;
 }
-
 #header img{
    height: 40px;
 }
