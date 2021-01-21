@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
 
 html{
@@ -20,6 +20,10 @@ body{
 h1{
    font-weight: 700;
 }
+a:hover{
+   text-decoration: none!important;
+   color: #114e77!important;
+}
 .main-title {
    font-family: Fira Code;
    font-style: normal;
@@ -38,7 +42,6 @@ h1{
 
 .text-OMICHH-1 p, .text-OMICHH-1 a, .text-OMICHH-1 h1, .text-OMICHH-1 h2, .text-OMICHH-1 h3, .text-OMICHH-1 h4, .text-OMICHH-1 h5, .text-OMICHH-1 h6{
    color: white !important;
-   /* font-size:xx-small; */
 }
 
 .text-OMICHH-2{
@@ -48,8 +51,8 @@ h1{
 }
 
 .first-container{
-   padding-top: 5rem;
-   margin-top: 5rem;
+   padding-top: 3rem;
+   margin-top: 4rem;
 }
 
 .bold{
@@ -89,6 +92,7 @@ h1{
    bottom: 0;
    width: 100%;
    padding-bottom: 1rem;
+   align-self: flex-end;
 }
 .Redes{
    height: 28px;
@@ -115,6 +119,7 @@ input, textarea{
    box-sizing: border-box !important;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
    border-radius: 1.5rem !important;
+   margin-bottom: 1.5rem!important;
 }
 .style-primary input{
    border-color: #ffffff !important;
@@ -138,7 +143,12 @@ select{
    background-color: #ffffff;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
    border: 2px solid #ffffff !important;
-   border-radius: 0.5em;
+   border-radius: 1.5em!important;
+}
+option{
+   color: #495057!important;
+   border-radius: 2rem !important;
+   width: 90%;
 }
 .style-primary select {
    border-color: #ffffff !important;
@@ -157,8 +167,9 @@ select{
    font-family: Noto Sans;
    font-style: normal;
    font-weight: bold;
-   line-height: 1vh;
-   padding-left: 1vw;
+   line-height: 0.8rem;
+   padding-left: 1.2rem;
+   margin-bottom: 0.8rem!important;
 }
 .style-primary .form-group p {
    color: #ffffff !important;
@@ -321,12 +332,11 @@ select{
    border-radius: 30px;
 }
 .form-footer p{
-   font-family: Noto Sans SC;
-   font-style: normal;
-   font-weight: 100;
-   font-size: 0.8em;
-
-   text-align: center;
+   font-family: Noto Sans SC !important;
+   font-style: normal !important;
+   font-weight: 100 !important;
+   font-size: 0.8em !important;
+   text-align: center !important;
 }
 .style-primary .form-footer p{
    color: #ffffff !important;
@@ -343,7 +353,6 @@ select{
 .form-footer a{
    text-decoration: none;
    font-weight: 700;
-   color: inherit;
 }
 /**/
 

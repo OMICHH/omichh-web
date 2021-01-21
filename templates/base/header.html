@@ -1,5 +1,5 @@
 {% load static %}
-<nav id="header" class="navbar navbar-expand-lg navbar-dark fixed-top bg-OMICHH">
+<nav id="header" class="navbar navbar-expand-lg navbar-dark {% if pos != "back" %} fixed-top {% endif %}bg-OMICHH">
     <div class="container" >
       <a class="navbar-brand p-0 m-0" href="#">
         <img src="{% if style == "primary" %}
@@ -25,4 +25,4 @@
         </ul>
         </div>
     </div>
-    </nav>
+</nav>

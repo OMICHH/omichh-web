@@ -21,14 +21,11 @@
                     {% include 'partials/_messages.html' %}
                     <div class="form-group">
                         <p class= "">Nombre completo</p>
-                        <input class="form-control mb-3 mx-auto d-block" type="text" placeholder="Nombre completo" name="name" />
+                        <input class="form-control mx-auto d-block" type="text" name="name" />
                         <p class= "">Correo electrónico</p>
-                        <input class="form-control mb-3 mx-auto d-block" type="text" placeholder="Correo electrónico" name="email" required/>
+                        <input class="form-control  mx-auto d-block" type="text" name="email" required/>
                         <p class= "">Mensaje</p>
-                        <div class="form-floating">
-                            <textarea name="message" id="messageTextArea" class="form-control mb-3 mx-auto d-block" autocomplete="off" required></textarea>
-                            <label for="messageTextArea" style="color:#000">Mensaje</label>
-                        </div>
+                        <textarea name="message" class="form-control  mx-auto d-block" autocomplete="off" required></textarea>
                     </div>
                     {% include "partials/button.html" with text_content="Enviar"%}
                 </form>
