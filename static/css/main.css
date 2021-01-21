@@ -31,10 +31,10 @@ a:hover{
    font-size: 2.5rem;
 }
 .style-primary *{
-   color: #ffffff;
+   color: #ffffff !important;
 }
 .style-secondary *{
-   color: #0091BF;
+   color: #0091BF !important;
 }
 .bg-OMICHH{  
    background: #0091BF;
@@ -45,7 +45,7 @@ a:hover{
 }
 
 .text-OMICHH-2{
-   color: rgba(255, 255, 255, 0.8) !important;
+   color: rgba(141, 41, 41, 0.8) !important;
    font-size:small;
 
 }
@@ -78,12 +78,7 @@ a:hover{
    height: 38px;
 }
 
-.style-primary .burger-white.navbar-toggler {
-    border-color: white !important;
-}
-.style-secondary .burger-white.navbar-toggler {
-   border-color: #0091BF !important;
-}
+
 /**/
 
 /* FOOTER */
@@ -103,6 +98,18 @@ a:hover{
    font-family: Noto Sans SC !important;
    font-weight: 100 !important;
    font-size: 0.85rem;
+}
+.style-primary .burger-border.navbar-toggler{
+   border-color: white !important;
+}
+.style-secondary .burger-border.navbar-toggler{
+  border-color: #0091BF !important;
+}
+.style-primary .burger-icon.navbar-toggler-icon{
+   background-image: url('white-menu.png') !important;
+}
+.style-secondary .burger-icon.navbar-toggler-icon {
+   background-image: url('blue-menu.png') !important;
 }
 /**/
 
