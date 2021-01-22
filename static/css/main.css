@@ -8,9 +8,15 @@ html{
    position: relative;
    width: 100%;
 }
+/* BODY */
 body{
-   margin-bottom: 18rem !important;
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   padding: 0!important;
 }
+
+/**/
 .style-primary {
    background: #0091BF;
 }
@@ -51,8 +57,12 @@ a:hover{
 }
 
 .first-container{
-   padding-top: 3rem;
-   margin-top: 4rem;
+   margin: 5rem auto;
+   width: 100%;
+   flex-grow: 1;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .bold{
@@ -83,11 +93,9 @@ a:hover{
 
 /* FOOTER */
 #footer{
-   position: absolute;
    bottom: 0;
    width: 100%;
    padding-bottom: 1rem;
-   align-self: flex-end;
 }
 .Redes{
    height: 28px;
@@ -366,9 +374,7 @@ option{
 /* MEDIA QUERIES */
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-   body{
-      margin-bottom: 12rem !important;
-   }
+   
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -378,9 +384,7 @@ option{
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-   body{
-      margin-bottom: 8rem !important;
-   }
+   
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
