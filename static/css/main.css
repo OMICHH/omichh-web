@@ -114,10 +114,10 @@ a:hover{
   border-color: #0091BF !important;
 }
 .style-primary .burger-icon.navbar-toggler-icon{
-   background-image: url('white-menu.png') !important;
+   background-image: url('menus/white-menu.png') !important;
 }
 .style-secondary .burger-icon.navbar-toggler-icon {
-   background-image: url('blue-menu.png') !important;
+   background-image: url('menus/blue-menu.png') !important;
 }
 /**/
 
