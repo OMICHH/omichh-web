@@ -28,7 +28,7 @@ h1{
 }
 a:hover{
    text-decoration: none!important;
-   color: #114e77!important;
+   color: #105f94!important;
 }
 .main-title {
    font-family: Fira Code;
@@ -37,10 +37,10 @@ a:hover{
    font-size: 2.5rem;
 }
 .style-primary *{
-   color: #ffffff !important;
+   color: #ffffff;
 }
 .style-secondary *{
-   color: #0091BF !important;
+   color: #0091BF;
 }
 .bg-OMICHH{  
    background: #0091BF;
@@ -57,7 +57,7 @@ a:hover{
 }
 
 .first-container{
-   margin: 5rem auto;
+   margin: 4rem auto;
    width: 100%;
    flex-grow: 1;
    display: flex;
@@ -87,7 +87,9 @@ a:hover{
 .navbar-toggler{
    height: 38px;
 }
-
+a.nav-link{
+   color: #ffffff!important;
+}
 
 /**/
 
@@ -135,6 +137,7 @@ input, textarea{
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
    border-radius: 1.5rem !important;
    margin-bottom: 1.5rem!important;
+   color: #1a1a1a!important;
 }
 .style-primary input{
    border-color: #ffffff !important;
