@@ -150,3 +150,19 @@ def landing_view(request):
 @login_required
 def contact_view(request):
     return render(request, 'index/contact.html')
+
+@login_required
+def complete_profile_view(request):
+    """ Complete a user profile """
+    user_is_coach=hasattr(request.user, "coach")
+    if request.method == 'POST':
+        if user_is_coach:
+            profile=request.user.coach
+            return redirect('landing')
+        else:
+            profile=request.user.student
+            return redirect('landing')
+    if user_is_coach:
+        return render(request,'users/complete_profile_coach.html')
+    else:
+        return render(request,'users/complete_profile_student.html')

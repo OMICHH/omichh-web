@@ -1,0 +1,24 @@
+{% extends 'users/base_register.html' %}
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+            {% include 'partials/forms.html' with function="openForm" class="m-auto"%}
+                <div class="form-group">
+                    <label class="content-input">
+                        <input type="radio" name="category" id="" value="OMI">OMI
+                        <i></i>
+                    </label>
+                    <label class="content-input">
+                        <input type="radio" name="category" id="" value="OMIS">OMIS
+                        <i></i>
+                    </label>
+                    <label class="content-input">
+                        <input type="radio" name="category" id="" value="OMIP">OMIP
+                        <i></i>
+                    </label>
+                </div>
+            {% include 'partials/forms.html' with function="closeForm" %}
+        </div>
+    </div>
+{% endblock container %}

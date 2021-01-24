@@ -37,6 +37,23 @@ Extra information:
         {% include 'partials/forms.html' with function="openForm" class="offset-md-6" %}
             ...
         {% include 'partials/forms.html' with function="closeForm"%}
+
+    How to use checkbox inputs or radio inputs
+        -First your need have a form-group.
+            <div class="form-group">
+                
+            </div>
+        -If you need a checkbox input copy the follow, and paste into the form-group.
+            <label class="content-input">
+                <input type="checkbox" name="" id="" value="">Text-next-checkbox
+                <i class="bi bi-check"></i>
+            </label>
+        -If you need a radio input copy the follow, and paste into the form-group.
+            <label class="content-input">
+                <input type="radio" name="" id="" value="">Text-next-checkbox
+                <i></i>
+            </label>
+        -For have more of these inputs in the same option group remember that the attribute "name" must to be equal in those, and the attributes "id" and "value" must to be the value that you want send to the formulary when that option is selected.
 {% endcomment %}
 
 {% if function == "openForm" %}

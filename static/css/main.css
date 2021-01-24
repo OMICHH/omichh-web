@@ -211,6 +211,131 @@ option{
    font-size: 0.7em;
    color: #d13131;
 }
+
+/*       Radio       */
+.content-input input{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	visibility: hidden;
+	position: absolute;
+	right: 0;
+}
+.content-input{
+   position: relative;
+   padding-left: 37px;
+   line-height: 20px;
+}
+.content-input input + i{
+   background: #f0f0f0;
+   border: 2px solid #0091BF;
+   position: absolute;
+   line-height: 5px;
+   left: 0;
+   top: 0;
+   margin: auto;
+}
+.content-input input[type=radio] + i{
+   height: 20px;
+   width: 20px;
+   border-radius: 100%;
+   left: 15px;
+}
+.content-input input[type=radio] + i:before{
+	content: '';
+	display: block;
+	height: 12px;
+   width: 12px;
+	border-radius: 100%;
+	position: absolute;
+	z-index: 1;
+	top: 2px;
+	left: 2px;
+	background:#0091BF;
+	transition: all 0.25s ease;
+	transform: scale(0);
+	opacity: 0;
+}
+.content-input input[type=radio]:checked + i:before{
+	transform: scale(1);
+	opacity: 1;
+}
+.style-primary .content-input input + i{
+   background: #0091BF;
+   border: 2px solid #f0f0f0;
+}
+.style-secondary .content-input input + i{
+   background: #f0f0f0;
+   border: 2px solid #0091BF;
+}
+.style-primary .content-input input[type=radio] + i:before{
+	background:#f0f0f0;
+}
+.style-secondary .content-input input[type=radio] + i:before{
+	background:#0091BF;
+}
+.style-primary .content-input:hover input[type=radio]:not(:checked) + i{
+	background: #01779b;
+}
+.style-secondary .content-input:hover input[type=radio]:not(:checked) + i{
+	background: #b1e2e8;
+}
+.form-primary .content-input input + i{
+   background: #0091BF;
+   border: 2px solid #f0f0f0;
+}
+.form-secondary .content-input input + i{
+   background: #f0f0f0;
+   border: 2px solid #0091BF;
+}
+.form-primary .content-input input[type=radio] + i:before{
+	background:#f0f0f0;
+}
+.form-secondary .content-input input[type=radio] + i:before{
+	background:#0091BF;
+}
+.form-primary .content-input:hover input[type=radio]:not(:checked) + i{
+	background: #01779b;
+}
+.form-secondary .content-input:hover input[type=radio]:not(:checked) + i{
+	background: #b1e2e8;
+}
+
+/*       Checkbox       */
+.content-input input[type=checkbox] + i{
+   height: 20px;
+   width: 20px;
+   left: 15px;
+}
+.content-input input[type=checkbox] + i:before{
+   display: block;
+   margin: -5;
+   font-size: 30px;
+	border-radius: 100%;
+   position: absolute;
+   left: -7px;
+   top: -7px;
+	z-index: 1;
+	transition: all 0.25s ease;
+	transform: scale(0);
+	opacity: 0;
+}
+.content-input input[type=checkbox]:checked + i:before{
+	transform: scale(1);
+	opacity: 1;
+}
+.style-primary .content-input input[type=checkbox] + i:before{
+	color:#f0f0f0;
+}
+.style-secondary .content-input input[type=checkbox] + i:before{
+	color:#0091BF;
+}
+.form-primary .content-input input[type=checkbox] + i:before{
+	color:#f0f0f0;
+}
+.form-secondary .content-input input[type=checkbox] + i:before{
+	color:#0091BF;
+}
 /**/
 
 /* BUTTONS */
@@ -345,6 +470,23 @@ option{
    border: 5px solid #0091BF;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 30px;
+}
+.form p, .form label{
+   font-family: Noto Sans !important;
+   font-style: normal !important;
+   font-weight: bold !important;
+}
+.style-primary .form p, .style-primary  .form label{
+   color: #ffffff !important;
+}
+.style-secondary .form p, .style-secondary .form label{
+   color: #0091BF !important;
+}
+.form-primary .form p, .form-primary  .form label{
+   color: #ffffff !important;
+}
+.form-secondary .form p, .form-secondary .form label{
+   color: #0091BF !important;
 }
 .form-footer p{
    font-family: Noto Sans SC !important;
