@@ -87,10 +87,12 @@ a:hover{
 .navbar-toggler{
    height: 38px;
 }
-a.nav-link{
+.style-prymary a.nav-link{
    color: #ffffff!important;
 }
-
+.style-secondary a.nav-link{
+   color: #0091BF!important;
+}
 /**/
 
 /* FOOTER */
@@ -124,8 +126,8 @@ a.nav-link{
 /**/
 
 /* IMAGE */
-.form .img-container {
-   width: 50%;
+.w-40 {
+   width: 40%;
 }
 /**/
 
@@ -181,13 +183,12 @@ option{
    border-color: #0091BF !important;
 }
 
-.form form p{
+.form form p, .form form label:not(.content-input){
    font-family: Noto Sans;
    font-style: normal;
    font-weight: bold;
-   line-height: 0.8rem;
-   padding-left: 1.2rem;
-   margin-bottom: 0.8rem!important;
+   padding-left: 1rem;
+   margin-bottom: 0.4rem!important;
 }
 .style-primary .form-group p {
    color: #ffffff !important;
@@ -222,12 +223,13 @@ option{
 	-moz-appearance: none;
 	visibility: hidden;
 	position: absolute;
-	right: 0;
+   right: 0;
 }
 .content-input{
    position: relative;
-   padding-left: 37px;
+   padding-left: 40px;
    line-height: 20px;
+   margin-bottom: 0;
 }
 .content-input input + i{
    background: #f0f0f0;
@@ -242,7 +244,7 @@ option{
    height: 20px;
    width: 20px;
    border-radius: 100%;
-   left: 15px;
+   left: 18px;
 }
 .content-input input[type=radio] + i:before{
 	content: '';
@@ -308,7 +310,7 @@ option{
 .content-input input[type=checkbox] + i{
    height: 20px;
    width: 20px;
-   left: 15px;
+   left: 18px;
 }
 .content-input input[type=checkbox] + i:before{
    display: block;
