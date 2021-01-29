@@ -9,7 +9,7 @@
 {% block container %}
     <div class="container">
         {% include 'partials/forms.html' with function="openForm" class="m-auto"%}
-            <div class="img-container p-2 m-auto mb-4 d-flex">
+            <div class="img-container p-2 m-auto mb-4 d-flex w-50">
                 {% if block.super == "primary" %}
                     <img src="{% static 'img/white-OMICHH-logo.png' %}" class="img-fluid" alt="OMICHH logo">
                 {% elif block.super == "secondary" %}
@@ -23,19 +23,19 @@
             <form method="POST" action="{% url 'singup' %}">
                 {% csrf_token %}
                 <div class="form-group mt-4">
-                    <p class= "mx-auto d-block">Nombre(s)</p>
-                    <input class="form-control mx-auto d-block" type="text" name="first_name" required="true"/>
-                    <p class= "mx-auto d-block">Apellido(s)</p>
-                    <input class="form-control mx-auto d-block" type="text" name="last_name" required="true"/>
-                    <p class= " mx-auto d-block">Usuario</p>
-                    <input class="form-control mx-auto d-block" type="text" name="username" required="true"/>
-                    <p class="mx-auto d-block">Correo electrónico</p>
-                    <input class="form-control mx-auto d-block" type="text" name="email" required="true"/>
-                    <p class= "mx-auto d-block">Contraseña</p>
-                    <input class="form-control mx-auto d-block" type="password" name="password" required="true"/>
-                    <p class= "mx-auto d-block">Confirma tu contraseña</p>
-                    <input class="form-control mx-auto d-block" type="password" name="password_confirm" required="true"/>
-                    <p class= "mx-auto d-block">Selecciona una opción...</p>
+                    <label class="mx-auto d-block" for="first_name">Nombre(s)</label>
+                    <input class="form-control mx-auto d-block" type="text" name="first_name" required="true" id="first_name"/>
+                    <label class="mx-auto d-block" for="last_name">Apellido(s)</label>
+                    <input class="form-control mx-auto d-block" type="text" name="last_name" required="true" id="last_name"/>
+                    <label class="mx-auto d-block" for="username">Usuario</label>
+                    <input class="form-control mx-auto d-block" type="text" name="username" required="true" id="username"/>
+                    <label class="mx-auto d-block" for="email">Correo electrónico</label>
+                    <input class="form-control mx-auto d-block" type="text" name="email" required="true" id="email"/>
+                    <label class="mx-auto d-block" for="password">Contraseña</label>
+                    <input class="form-control mx-auto d-block" type="password" name="password" required="true" id="password"/>
+                    <label class="mx-auto d-block" for="password_confirm">Confirma tu contraseña</label>
+                    <input class="form-control mx-auto d-block" type="password" name="password_confirm" required="true" id="password_confirm"/>
+                    <label class="mx-auto d-block" for="">Selecciona una opción...</label>
                     <select class="custom-select mx-auto d-block" type="text" name="type" required="true" id="inlineFormCustomSelect">
                         <option selected>Selecciona una opción... </option>
                         <option value="coach">Asesor</option>

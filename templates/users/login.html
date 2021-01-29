@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             {% include 'partials/forms.html' with function="openForm" class="m-auto" %}
-                <div class="img-container p-2 m-auto mb-4 d-flex">
+                <div class="img-container p-2 m-auto mb-4 d-flex w-50">
                     {% if block.super == "primary" %}
                         <img src="{% static 'img/white-OMICHH-logo.png' %}" class="img-fluid" alt="OMICHH logo">
                     {% elif block.super == "secondary" %}
@@ -30,10 +30,10 @@
                     {% include 'partials/_messages.html' %}
 
                     <div class="form-group">
-                        <p class= "mx-auto d-block">Usuario</p>
-                        <input class="form-control mx-auto d-block" type="text" name="username" />
-                        <p class= "mx-auto d-block">Contraseña</p>
-                        <input class="form-control mx-auto d-block" type="password" name="password" />
+                        <label class= "mx-auto d-block" for="username">Usuario</label>
+                        <input class="form-control mx-auto d-block" type="text" name="username" id="username" />
+                        <label class= "mx-auto d-block" for="password">Contraseña</label>
+                        <input class="form-control mx-auto d-block" type="password" name="password" id="password" />
                     </div>
                     {% include 'partials/button.html' with text_content="Iniciar sesión" type="submit" %}
                     <div class= "d-flex flex-column mt-4 form-footer">

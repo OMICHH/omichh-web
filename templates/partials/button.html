@@ -15,7 +15,7 @@ Instructions to use a button:
 {% endcomment %}
 
 <div>
-    <button class="btn mx-auto mt-5 d-block button button-{{ style }}"
+    <button class="btn mx-auto mt-5 d-block button {% if style %}button-{{ style }}{% endif %}"
     type="{% if type %}{{ type }}{% else %}submit{% endif %}">
         {{ text_content }}
     </button>

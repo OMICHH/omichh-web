@@ -15,7 +15,17 @@ body{
    height: 100vh;
    padding: 0!important;
 }
-
+/**/
+/* IMAGE */
+.w-40 {
+   width: 40%;
+}
+.karel-container{
+   position: absolute;
+   width: 450px!important;
+   transform: rotate(-40deg);
+   margin-right: 400px!important;
+}
 /**/
 .style-primary {
    background: #0091BF;
@@ -87,7 +97,16 @@ a:hover{
 .navbar-toggler{
    height: 38px;
 }
+<<<<<<< HEAD
 
+=======
+.style-prymary a.nav-link{
+   color: #ffffff!important;
+}
+.style-secondary a.nav-link{
+   color: #0091BF!important;
+}
+>>>>>>> 62e71fd6e44c3cf56c89ebc7fcff508f10a5e488
 /**/
 
 /* FOOTER */
@@ -117,12 +136,6 @@ a:hover{
 }
 .style-secondary .burger-icon.navbar-toggler-icon {
    background-image: url('menus/blue-menu.png') !important;
-}
-/**/
-
-/* IMAGE */
-.form .img-container {
-   width: 50%;
 }
 /**/
 
@@ -178,13 +191,12 @@ option{
    border-color: #0091BF !important;
 }
 
-.form form p{
+.form form p, .form form label:not(.content-input){
    font-family: Noto Sans;
    font-style: normal;
    font-weight: bold;
-   line-height: 0.8rem;
-   padding-left: 1.2rem;
-   margin-bottom: 0.8rem!important;
+   padding-left: 1rem;
+   margin-bottom: 0.4rem!important;
 }
 .style-primary .form-group p {
    color: #ffffff !important;
@@ -219,15 +231,16 @@ option{
 	-moz-appearance: none;
 	visibility: hidden;
 	position: absolute;
-	right: 0;
+   right: 0;
 }
 .content-input{
    position: relative;
-   padding-left: 37px;
+   padding-left: 40px;
    line-height: 20px;
+   margin-bottom: 0;
 }
 .content-input input + i{
-   background: #f0f0f0;
+   background: #ffffff;
    border: 2px solid #0091BF;
    position: absolute;
    line-height: 5px;
@@ -239,7 +252,7 @@ option{
    height: 20px;
    width: 20px;
    border-radius: 100%;
-   left: 15px;
+   left: 18px;
 }
 .content-input input[type=radio] + i:before{
 	content: '';
@@ -265,11 +278,11 @@ option{
    border: 2px solid #f0f0f0;
 }
 .style-secondary .content-input input + i{
-   background: #f0f0f0;
+   background: #ffffff;
    border: 2px solid #0091BF;
 }
 .style-primary .content-input input[type=radio] + i:before{
-	background:#f0f0f0;
+	background:#ffffff;
 }
 .style-secondary .content-input input[type=radio] + i:before{
 	background:#0091BF;
@@ -278,7 +291,7 @@ option{
 	background: #01779b;
 }
 .style-secondary .content-input:hover input[type=radio]:not(:checked) + i{
-	background: #b1e2e8;
+	background: #e2e2e2;
 }
 .form-primary .content-input input + i{
    background: #0091BF;
@@ -305,7 +318,7 @@ option{
 .content-input input[type=checkbox] + i{
    height: 20px;
    width: 20px;
-   left: 15px;
+   left: 18px;
 }
 .content-input input[type=checkbox] + i:before{
    display: block;
