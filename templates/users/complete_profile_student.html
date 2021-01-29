@@ -1,23 +1,57 @@
 {% extends 'users/base_secondary.html' %}
 
+{% load static %}
+
 {% block container %}
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center align-items-center">
+            <div class="karel-container">
+                <img src="{% static 'img/karel.png' %}" alt="" class="img-fluid karel-img">
+            </div>
             {% include 'partials/forms.html' with function="openForm" class="m-auto"%}
-                <div class="form-group">
-                    <label class="content-input">
-                        <input type="radio" name="category" id="" value="OMI">OMI
-                        <i></i>
-                    </label>
-                    <label class="content-input">
-                        <input type="radio" name="category" id="" value="OMIS">OMIS
-                        <i></i>
-                    </label>
-                    <label class="content-input">
-                        <input type="radio" name="category" id="" value="OMIP">OMIP
-                        <i></i>
-                    </label>
+                <div class="img-container p-2 m-auto mb-4 d-flex w-40" >
+                    {% if block.super == "primary" %}
+                        <img src="{% static 'img/white-OMICHH-logo.png' %}" class="img-fluid" alt="OMICHH logo">
+                    {% elif block.super == "secondary" %}
+                        <img src="{% static 'img/blue-OMICHH-logo.png' %}" class="img-fluid" alt="OMICHH logo">
+                    {% endif %}
                 </div>
+                <form method="POST" action="{% url 'complete_profile' %}" class="mt-1">
+                    <div class="form-group">
+                        <label class="mx-auto d-block" for="category">Categoría</label>
+                        <div class="option-group">
+                            <label class="content-input">
+                                <input type="radio" name="category" id="category" value="OMI">OMI
+                                <i></i>
+                            </label>
+                            <label class="content-input">
+                                <input type="radio" name="category" id="category" value="OMIS">OMIS
+                                <i></i>
+                            </label>
+                            <label class="content-input">
+                                <input type="radio" name="category" id="category" value="OMIP">OMIP
+                                <i></i>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="mx-auto d-block" for="birthdate">Fecha de nacimiento</label>
+                        <input class="form-control mx-auto d-block" type="date" name="birthdate" required="true" id="birthdate"  min="2003-01-01" max="2015-12-31" value=""/>
+                        <label class="mx-auto d-block" for="name_of_tutor">Nombre del padre o tutor</label>
+                        <input class="form-control mx-auto d-block" type="text" name="name_of_tutor" required="true" id="name_of_tutor"/>
+                        <label class="mx-auto d-block" for="phone_of_tutor">Teléfono del padre o tutor</label>
+                        <input class="form-control mx-auto d-block" type="text" name="phone_of_tutor" required="true" id="phone_of_tutor"/>
+                        <label class="mx-auto d-block" for="tutor_email">Correo del padre o tutor</label>
+                        <input class="form-control mx-auto d-block" type="email" name="tutor_email" required="true" id="tutor_email"/>
+                        <label class="mx-auto d-block" for="omegaup_user">Usuario de OmegaUp</label>
+                        <input class="form-control mx-auto d-block" type="text" name="omegaup_user" required="true" id="omegaup_user"/>
+                        <label class="mx-auto d-block" for="school">Escuela</label>
+                        <input class="form-control mx-auto d-block" type="text" name="school" required="true" id="school"/>
+                        <label class="mx-auto d-block" for="coach">Nombre del Entrenador</label>
+                        <input class="form-control mx-auto d-block" type="text" name="coach" required="true" id="coach"/>
+                    </div>
+                    {% include "partials/button.html" with text_content="Guardar"%}
+                </form>
             {% include 'partials/forms.html' with function="closeForm" %}
         </div>
     </div>
