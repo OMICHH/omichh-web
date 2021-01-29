@@ -166,3 +166,22 @@ def complete_profile_view(request):
         return render(request,'users/complete_profile_coach.html')
     else:
         return render(request,'users/complete_profile_student.html')
+
+@login_required
+def info_profile_view(request):
+    """ Look at a info user """
+    user=request.user
+    user_is_coach=hasattr(request.user, "coach")
+    if request.method == 'POST':
+        if user_is_coach:
+            profile=request.user.coach
+            return redirect('landing')
+        else:
+            profile=request.user.student
+            return redirect('landing')
+    if user_is_coach:
+        return render(request,'users/info_profile_coach.html')
+    elif user.student.category == "OMI":
+        return render(request,'users/info_profile_omi.html')
+    else:
+        return render(request,'users/info_profile_omips.html')

@@ -37,10 +37,10 @@ a:hover{
    font-size: 2.5rem;
 }
 .style-primary *{
-   color: #ffffff;
+   color: #ffffff !important;
 }
 .style-secondary *{
-   color: #0091BF;
+   color: #0091BF !important;
 }
 .bg-OMICHH{  
    background: #0091BF;
@@ -86,9 +86,6 @@ a:hover{
 
 .navbar-toggler{
    height: 38px;
-}
-a.nav-link{
-   color: #ffffff!important;
 }
 
 /**/
