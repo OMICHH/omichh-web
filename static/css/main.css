@@ -22,7 +22,7 @@ body{
 }
 .karel-container{
    position: absolute;
-   width: 450px;
+   width: 450px!important;
    transform: rotate(-40deg);
    margin-right: 400px!important;
 }

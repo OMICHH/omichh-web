@@ -3,11 +3,11 @@
 {% load static %}
 
 {% block container %}
-    <div class="karel-container">
-        <img src="{% static 'img/karel.png' %}" alt="" class="img-fluid karel-img">
-    </div>
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center align-items-center">
+            <div class="karel-container">
+                <img src="{% static 'img/karel.png' %}" alt="" class="img-fluid karel-img">
+            </div>
             {% include 'partials/forms.html' with function="openForm" class="m-auto"%}
                 <div class="img-container p-2 m-auto mb-4 d-flex w-40" >
                     {% if block.super == "primary" %}
