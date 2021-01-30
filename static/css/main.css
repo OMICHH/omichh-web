@@ -47,10 +47,10 @@ a:hover{
    font-size: 2.5rem;
 }
 .style-primary *{
-   color: #ffffff !important;
+   color: #ffffff;
 }
 .style-secondary *{
-   color: #0091BF !important;
+   color: #0091BF;
 }
 .bg-OMICHH{  
    background: #0091BF;
@@ -97,16 +97,12 @@ a:hover{
 .navbar-toggler{
    height: 38px;
 }
-<<<<<<< HEAD
-
-=======
-.style-prymary a.nav-link{
+.style-primary li .nav-link{
    color: #ffffff!important;
 }
-.style-secondary a.nav-link{
+.style-secondary li .nav-link{
    color: #0091BF!important;
 }
->>>>>>> 62e71fd6e44c3cf56c89ebc7fcff508f10a5e488
 /**/
 
 /* FOOTER */
