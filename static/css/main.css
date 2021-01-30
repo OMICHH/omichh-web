@@ -87,8 +87,11 @@ a:hover{
 .navbar-toggler{
    height: 38px;
 }
-a.nav-link{
+.style-primary li .nav-link{
    color: #ffffff!important;
+}
+.style-secondary li .nav-link{
+   color: #0091BF!important;
 }
 
 /**/
