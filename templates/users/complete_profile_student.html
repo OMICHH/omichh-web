@@ -17,6 +17,7 @@
                     {% endif %}
                 </div>
                 <form method="POST" action="{% url 'complete_profile' %}" class="mt-1">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label class="mx-auto d-block" for="category">Categoría</label>
                         <div class="option-group">

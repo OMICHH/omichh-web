@@ -17,7 +17,7 @@ from django.views import View
 
 #Models
 from django.contrib.auth.models import User
-from users.models import Coach, Student
+from users.models import Coach, Student, Category, School
 
 
 def login_view(request):
@@ -154,13 +154,39 @@ def contact_view(request):
 @login_required
 def complete_profile_view(request):
     """ Complete a user profile """
-    user_is_coach=hasattr(request.user, "coach")
+    user=request.user
+    user_is_coach=hasattr(user, "coach")
     if request.method == 'POST':
         if user_is_coach:
-            profile=request.user.coach
+            profile=user.coach
+            # profile.birthdate=request.POST["birthdate"]
+            # profile.phone=request.POST["phone"]
+            # profile.omegaup_user=request.POST["omegaup_user"]
+            # schools=request.POST["school"]
+            # schools=schools.split(",")
+            # for element in schools:
+            #     school=School.objects.get(school=element)
+            #     profile.school.add(school)
+            # categories=request.POST.getlist("category")
+            # profile.category.clear()
+            # for element in categories:
+            #     print(element)
+            #     category=Category.objects.get(category_name=element)
+            #     profile.category.add(category)
+            # profile.save()
             return redirect('landing')
         else:
-            profile=request.user.student
+            profile=user.student
+            # coach=User.objects.get(email=request.POST["coach"])
+            # profile.coach=coach.coach
+            # profile.school=School.objects.get(school=request.POST["school"])
+            # profile.birthdate=request.POST["birthdate"]
+            # profile.name_of_tutor=request.POST["name_of_tutor"]
+            # profile.phone_of_tutor=request.POST["phone_of_tutor"]
+            # profile.tutor_email=request.POST["tutor_email"]
+            # profile.omegaup_user=request.POST["omegaup_user"]
+            # profile.category=Category.objects.get(category_name=request.POST["category"])
+            # profile.save()
             return redirect('landing')
     if user_is_coach:
         return render(request,'users/complete_profile_coach.html')
@@ -171,17 +197,17 @@ def complete_profile_view(request):
 def info_profile_view(request):
     """ Look at a info user """
     user=request.user
-    user_is_coach=hasattr(request.user, "coach")
+    user_is_coach=hasattr(user, "coach")
     if request.method == 'POST':
         if user_is_coach:
-            profile=request.user.coach
+            profile=user.coach
             return redirect('landing')
         else:
-            profile=request.user.student
+            profile=user.student
             return redirect('landing')
     if user_is_coach:
         return render(request,'users/info_profile_coach.html')
-    elif user.student.category == "OMI":
+    elif user.student.category.category_name == "OMI" :
         return render(request,'users/info_profile_omi.html')
     else:
         return render(request,'users/info_profile_omips.html')
