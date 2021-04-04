@@ -485,7 +485,7 @@ option{
    font-style: normal !important;
    font-weight: bold !important;
 }
-.style-primary .form p, .style-primary  .form label{
+.style-primary form p, .style-primary form label{
    color: #ffffff !important;
 }
 .style-secondary .form p, .style-secondary .form label{
