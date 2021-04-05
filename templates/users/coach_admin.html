@@ -1,0 +1,31 @@
+{% extends 'users/base_secondary.html' %}
+
+{% block head_content %}
+    <title>Coach Administration</title>
+{% endblock head_content %}
+
+{% load static %}
+
+{% block container %}
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-6">
+                <img src="{% static 'img/Team-amico.png' %}" class="img-fluid" alt="Team de programadores">
+            </div>
+            <div class="search-container col">
+                <form class="d-flex">
+                    <input class="form-control search-input" type="search" placeholder="Buscar Alumno" aria-label="Search">
+                    <button class="justify-content-center" type="submit">
+                        <div class="lens-search">
+
+                        </div>
+                        
+                    </button>
+                  </form>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+    </div>
+{% endblock container %}

@@ -8,6 +8,7 @@ from django.db.utils import IntegrityError
 from django.core.mail import EmailMessage, send_mail
 from django.utils.encoding import force_bytes, force_text, DjangoUnicodeDecodeError
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django import urls
 from django.urls import reverse
 
 from .utils import account_activation_token
@@ -211,3 +212,12 @@ def info_profile_view(request):
         return render(request,'users/info_profile_omi.html')
     else:
         return render(request,'users/info_profile_omips.html')
+
+@login_required
+def coach_admin_view(request):
+    user=request.user
+    user_is_coach=hasattr(user, "coach")
+    if user_is_coach:
+        return render(request,'users/coach_admin.html')
+    else:
+        return redirect(urls.reverse("info_profile"))
