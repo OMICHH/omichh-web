@@ -1,0 +1,43 @@
+{% comment %} 
+Instructions to use a search bar:
+    1.- Include this template where you need.
+
+    2.- You can use one or more of the following attributes (in any order):
+
+        placeholder = A string to show in the attribute placeholder of the input. By default it will be "Buscar"
+
+        idInput = String that will be assigned to the attribute id of the input. By default it will be "search_input"
+
+        nameInput = String that will be assigned to the attribute name of the input. By default it will be "search_input"
+
+        inputStyle = String with extra style classes for the input field of the search bar.
+
+        type = String that will be assigned to define the type of the button. By default it will be "submit"
+
+        btnStyle = String with extra style classes for the button of the search bar.
+    
+    EXAMPLE:
+    {% include 'partials/search_bar.html' with  placeholder="Buscar alumnos" idInput="wanted_student" nameInput="wanted_student" inputStyle="search-input-dark" type="Submit" btnStyle="search-btn-dark" %}
+
+{% endcomment %}
+
+<div class="search-container">
+    <form class="d-flex">
+        <input
+            class="form-control search-input {% if inputStyle %}{{ inputStyle }}{% endif %}"
+            type="search"
+            placeholder="{% if placeholder %}{{ placeholder }}{% else %} Buscar {% endif %}"
+            aria-label="Busqueda"
+            id="{% if idInput %} {{idInput}} {% else %} search_input {% endif %}"
+            name="{% if nameInput %} {{nameInput}} {% else %} search_input {% endif %}"
+        >
+        <button
+            class="justify-content-center {% if btnStyle %}{{ btnStyle }}{% endif %}"
+            type="{% if type %}{{ type }}{% else %}submit{% endif %}"
+            aria-label="Buscar">
+
+            <div class="lens-search"></div>
+
+        </button>
+    </form>
+</div>

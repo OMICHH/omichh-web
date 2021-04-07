@@ -101,8 +101,13 @@ a:hover{
 .search-input::placeholder{
    color: #129fca !important;
 }
+.style-secondary .search-container button{
+   border: 2px solid #0091BF;
+}
+.style-primary .search-container button{
+   border: 2px solid #ffffff;
+}
 .search-container button{
-   border: 2px solid #0091BF !important;
    border-left: none !important;
    margin-left: 0px;
    background-color: #ffffff;

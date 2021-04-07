@@ -9,14 +9,21 @@ Instructions to use a button:
         {% include 'partials/forms.html' with text_content="Borrar!" type="reset"%}
     If this argument isn´t passed, then the type of the button will be "submit".
 
-    4.- If you need the button of a style other than the main one of the page, you can with the "style" argument, passing passing a value between "primary" or "secondary".
+    4.- If you need use the button as a link, you must enclose the button in a <a> label.
+        <a href="">
+            {% include 'partials/forms.html' with text_content="Página"%}
+        </a>
+    
+    5.- If you need the button of a style other than the main one of the page, you can with the "style" argument, passing passing a value between "primary" or "secondary".
         {% include 'partials/forms.html' with text_content="Comparte" style="primary" %}
 
 {% endcomment %}
 
 <div>
-    <button class="btn mx-auto mt-5 d-block button {% if style %}button-{{ style }}{% endif %}"
-    type="{% if type %}{{ type }}{% else %}submit{% endif %}">
+    <button
+        class="btn mx-auto mt-5 d-block button {% if style %}button-{{ style }}{% endif %}"
+        type="{% if type %}{{ type }}{% else %}submit{% endif %}" >
+
         {{ text_content }}
     </button>
 </div>
