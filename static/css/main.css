@@ -582,6 +582,84 @@ option{
 }
 /**/
 
+/* TABLES */
+.table{
+   border-collapse: unset !important;
+   border-spacing: 0px;
+   border-radius:15px !important;
+   -moz-border-radius:15px !important;
+   -webkit-border-radius: 15px !important;
+   border: solid 5px #0091BF !important;
+   padding: 0px !important;
+   text-align: center;
+   /* color: #ffffff !important;
+   background-color: #007cc3 !important; */
+}
+.table thead{
+   font-weight: 700;
+}
+.table td, .table th{
+   border-top: none !important;
+}
+.table td{
+   border: 1px solid #0091BF !important;
+}
+.table thead td:first-child { 
+   border-top-left-radius: 9px; 
+}
+.table thead td:last-child {   
+   border-top-right-radius: 9px; 
+}
+.table tbody tr:last-child td:first-child { 
+   border-bottom-left-radius: 9px; 
+}
+.table tbody tr:last-child td:last-child { 
+   border-bottom-right-radius: 9px; 
+}
+.table .button-table button{
+   display: inline !important;
+   margin: 5px !important;
+   padding: 6px 15px !important;
+   border: none !important;
+   min-width: 89px !important;
+   color: white !important;
+   font-family: Noto Sans SC !important;
+   font-weight: 100 !important;
+}
+.table td:last-child {   
+   padding: 5px; 
+}
+.table .button-table .edit-button{
+   margin-right: 5px !important;
+   background-color: #0091BF !important;
+}
+.table .button-table .edit-button:hover{
+   background-color: #0070b1 !important;
+}
+.table .button-table .edit-button:active{
+   background-color: #007cc3 !important;
+   box-shadow: 0 0 0 3px #65a3d680 !important;
+}
+.table .button-table .delete-button{
+   margin-left: 5px !important;
+   background-color: #940000 !important;
+}
+.table .button-table .delete-button:hover{
+   background-color: #ac0a0a !important;
+}
+.table .button-table .delete-button:active{
+   background-color: #8b2222 !important;
+   box-shadow: 0 0 0 3px #8d424280 !important;
+}
+/* .table *{
+   color: #ffffff !important;
+} */
+
+/**/
+
+
+
+
 /* MEDIA QUERIES */
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -600,7 +678,9 @@ option{
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
+   .table .button-table button{
+      margin: 0px 5px !important;
+   }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */

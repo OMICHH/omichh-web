@@ -3,25 +3,30 @@ Instructions to use a button:
     1.- Include this template where you need.
 
     2.- Then, call the "text_content" argument, with the text that the button will carry.
-        {% include 'partials/forms.html' with text_content="Enviar!"%}
+        {% include 'partials/button.html' with text_content="Enviar!"%}
     
     3.- You can pass a specific type to button with the "type" argument.
-        {% include 'partials/forms.html' with text_content="Borrar!" type="reset"%}
+        {% include 'partials/button.html' with text_content="Borrar!" type="reset"%}
     If this argument isn´t passed, then the type of the button will be "submit".
 
     4.- If you need use the button as a link, you must enclose the button in a <a> label.
         <a href="">
-            {% include 'partials/forms.html' with text_content="Página"%}
+            {% include 'partials/button.html' with text_content="Página"%}
         </a>
     
     5.- If you need the button of a style other than the main one of the page, you can with the "style" argument, passing passing a value between "primary" or "secondary".
-        {% include 'partials/forms.html' with text_content="Comparte" style="primary" %}
-
+        {% include 'partials/button.html' with text_content="Comparte" style="primary" %}
+    
+    6.- If you need the button with extra classes, you can with the "classes" argument.
+        {% include 'partials/button.html' with text_content="Comparte" classes="edit-button" %}
+    
+    7.- If you need the button with extra classes in container, you can with the "classesContainer" argument.
+        {% include 'partials/button.html' with text_content="Comparte" classesContainer="ml-5" %}
 {% endcomment %}
 
-<div>
+<div class="button-container {% if classesContainer %}{{ classesContainer }}{% endif %}">
     <button
-        class="btn mx-auto mt-5 d-block button {% if style %}button-{{ style }}{% endif %}"
+        class="btn mx-auto mt-5 d-block button {% if style %}button-{{ style }}{% endif %} {% if classes %}{{ classes }}{% endif %}"
         type="{% if type %}{{ type }}{% else %}submit{% endif %}" >
 
         {{ text_content }}

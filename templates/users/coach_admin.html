@@ -1,4 +1,4 @@
-{% extends 'users/base.html' %}
+{% extends 'users/base_secondary.html' %}
 
 {% block head_content %}
     <title>Coach Administration</title>
@@ -9,10 +9,10 @@
 {% block container %}
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-6">
+            <div class="col-12 col-lg-6">
                 <img src="{% static 'img/Team-amico.png' %}" class="img-fluid" alt="Team de programadores">
             </div>
-            <div class="col">
+            <div class="col mt-3 mb-5">
                 {% include 'partials/search_bar.html' with  placeholder="Buscar Alumno" idInput="wanted_student" nameInput="wanted_student"%}
                 {% comment %} <div class="search-container">
                     <form class="d-flex">
@@ -26,6 +26,37 @@
         </div>
         <div class="row">
 
+        </div>
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <td>No.</td>
+                    <td>Alumno</td>
+                    <td>Categoría</td>
+                    <td>Usuario Omegaup</td>
+                    <td>Correo</td>
+                    <td>Telefono</td>
+                    <td>Configuración</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Nombre Nombre Apellido Apelido</td>
+                    <td>OMIP</td>
+                    <td class="text-break">Adrigondo</td>
+                    <td class="text-break">theadrigondo24@gmail.com</td>
+                    <td>6140000000</td>
+                    <td class="">
+                        <div class="d-flex justify-content-center align-items-center flex-wrap">
+                            {% include 'partials/button.html' with text_content="Editar" classes="edit-button" classesContainer="button-table" %}
+                            {% include 'partials/button.html' with text_content="Eliminar" classes="delete-button" classesContainer="button-table" %}
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 {% endblock container %}
