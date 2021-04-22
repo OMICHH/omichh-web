@@ -3,12 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
 
 html{
-   font-family:'Noto Sans', sans-serif !important;
+   font-family: 'Noto Sans'!important;
    min-height: 100%;
    position: relative;
    width: 100%;
 }
-
+html *{
+   font-family: 'Noto Sans'!important;
+}
 /* BODY */
 body{
    display: flex;
@@ -37,14 +39,14 @@ body{
    background: #ffffff;
 }
 h1{
-   font-weight: 700;
+   font-weight: 700!important;
 }
 a:hover{
    text-decoration: none!important;
    color: #105f94!important;
 }
 .main-title {
-   font-family: Fira Code;
+   font-family: Fira Code!important;
    font-style: normal;
    font-weight: normal;
    font-size: 2.5rem;
@@ -79,7 +81,7 @@ a:hover{
 }
 
 .bold{
-   font-weight: 500;
+   font-weight: bold!important;
 }
 ul {
    list-style-type: none;
@@ -261,7 +263,7 @@ option{
 }
 
 .form form p, .form form label:not(.content-input){
-   font-family: Noto Sans;
+   font-family: Noto Sans!important;
    font-style: normal;
    font-weight: bold;
    padding-left: 1rem;
@@ -604,6 +606,24 @@ option{
 
 
 /* TABLES */
+.top-title-table > .image-svg,
+.top-title-table > h1{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.top-title-table{
+   justify-content: center;
+   align-items: center;
+}
+.top-title-table > .image-svg{
+   order: 2!important;
+}
+.top-title-table > h1
+{
+   order: 1!important;
+   margin-bottom: 2rem;
+}
 .table{
    border-collapse: unset !important;
    border-spacing: 0px;
@@ -695,6 +715,25 @@ option{
 
 
 /* MEDIA QUERIES */
+/* Extra small devices (landscape phones, 360px and up) */
+@media (min-width: 362px) {
+   .top-title-table > .image-svg,
+   .top-title-table > h1{
+      width: fit-content;
+   }
+   .top-title-table{
+      justify-content: flex-start;
+      align-items: flex-start;
+   }
+   .top-title-table > .image-svg{
+      order: 1!important;
+   }
+   .top-title-table > h1
+   {
+      order: 2!important;
+   }
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
    
