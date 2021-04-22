@@ -8,6 +8,7 @@ from django.db.utils import IntegrityError
 from django.core.mail import EmailMessage, send_mail
 from django.utils.encoding import force_bytes, force_text, DjangoUnicodeDecodeError
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django import urls
 from django.urls import reverse
 
 from .utils import account_activation_token
@@ -177,8 +178,9 @@ def complete_profile_view(request):
             return redirect('landing')
         else:
             profile=user.student
-            # coach=User.objects.get(email=request.POST["coach"])
-            # profile.coach=coach.coach
+            # profe=User.objects.get(email=request.POST["coach"])
+            # print(profe.coach)
+            # profile.coach=profe.coach
             # profile.school=School.objects.get(school=request.POST["school"])
             # profile.birthdate=request.POST["birthdate"]
             # profile.name_of_tutor=request.POST["name_of_tutor"]
@@ -211,3 +213,19 @@ def info_profile_view(request):
         return render(request,'users/info_profile_omi.html')
     else:
         return render(request,'users/info_profile_omips.html')
+
+@login_required
+def coach_admin_view(request):
+    user=request.user
+    user_is_coach=hasattr(user, "coach")
+    if user_is_coach:
+        students=Student.objects.filter(coach=user.coach)
+        context={
+            'students': students,
+        }
+        return render(request,'users/coach_admin.html', context)
+    else:
+        return redirect(urls.reverse("info_profile"))
+
+def results_view(request):
+    return render(request,'users/results.html')

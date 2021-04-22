@@ -22,7 +22,10 @@ urlpatterns = [
     path('singup/', users_views.sing_up_view, name='singup'),
     path('home/', users_views.dashboard, name='dashboard'),
     path('complete_profile/', users_views.complete_profile_view, name='complete_profile'),
-    path('info_profile/', users_views.info_profile_view, name='info_profile'),    
+    path('info_profile/', users_views.info_profile_view, name='info_profile'),
+    
+    path('coach_admin/', users_views.coach_admin_view, name='coach_admin'),
+    path('results/', users_views.results_view, name='results'),
 
     # Blog views
     path('blog/', blog_views.blog_view, name='blog'),
