@@ -41,14 +41,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for student in students %}
                 <tr>
-                    <td class="text-break">{{ forloop.counter }}</td>
-                    <td>{{ student.student_user.get_full_name }}</td>
-                    <td>{{ student.category }}</td>
-                    <td class="text-break">{{ student.student_user.username }}</td>
-                    <td class="text-break">{{ student.student_user.email }}</td>
-                    <td class="text-break">{{ student.phone_of_tutor }}</td>
+                    <td class="text-break">1</td>
+                    <td>Nombre Nombre Apellido Apelido</td>
+                    <td>OMIP</td>
+                    <td class="text-break">Adrigondo</td>
+                    <td class="text-break">theadrigondo24@gmail.com</td>
+                    <td class="text-break">6140000000</td>
                     <td class="">
                         <div class="d-flex justify-content-center align-items-center flex-wrap">
                             {% include 'partials/button.html' with text_content="Editar" classes="edit-button" classesContainer="button-table" %}
@@ -56,7 +55,6 @@
                         </div>
                     </td>
                 </tr>
-                {% endfor %}
                 </tbody>
             </table>
         </div>

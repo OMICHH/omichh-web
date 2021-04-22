@@ -178,8 +178,9 @@ def complete_profile_view(request):
             return redirect('landing')
         else:
             profile=user.student
-            # coach=User.objects.get(email=request.POST["coach"])
-            # profile.coach=coach.coach
+            # profe=User.objects.get(email=request.POST["coach"])
+            # print(profe.coach)
+            # profile.coach=profe.coach
             # profile.school=School.objects.get(school=request.POST["school"])
             # profile.birthdate=request.POST["birthdate"]
             # profile.name_of_tutor=request.POST["name_of_tutor"]
@@ -218,6 +219,13 @@ def coach_admin_view(request):
     user=request.user
     user_is_coach=hasattr(user, "coach")
     if user_is_coach:
-        return render(request,'users/coach_admin.html')
+        students=Student.objects.filter(coach=user.coach)
+        context={
+            'students': students,
+        }
+        return render(request,'users/coach_admin.html', context)
     else:
         return redirect(urls.reverse("info_profile"))
+
+def results_view(request):
+    return render(request,'users/results.html')
