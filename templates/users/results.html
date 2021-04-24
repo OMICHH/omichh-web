@@ -40,6 +40,18 @@
                 </tr>
                 </thead>
                 <tbody>
+                {% for contestant in contestants %}
+                <tr>
+                    <td class="text-break">{{ forloop.counter }}</td>
+                    <td>{{ contestant.name }}</td>
+                    <td>{{ contestant.category }}</td>
+                    <td>{{ contestant.exam1 }}</td>
+                    <td>{{ contestant.exam2 }}</td>
+                    <td>{{ contestant.exam3 }}</td>
+                    <td>{{ contestant.exam4 }}</td>
+                    <td>{{ contestant.exam5 }}</td>
+                </tr>
+                {% endfor %}
                 <tr>
                     <td class="text-break">1</td>
                     <td>Adrian Alejandro González Domínguez</td>
