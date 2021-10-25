@@ -10,6 +10,7 @@ from django.conf.urls.static import static
 # Views
 from django.contrib.auth import views as auth_views
 from users import views as users_views
+from blog import views as blog_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -20,6 +21,11 @@ urlpatterns = [
     path('logout/', users_views.logout_view, name='logout'),
     path('singup/', users_views.sing_up_view, name='singup'),
     path('home/', users_views.dashboard, name='dashboard'),
+    path('complete_profile/', users_views.complete_profile_view, name='complete_profile'),
+    path('info_profile/', users_views.info_profile_view, name='info_profile'),    
+
+    # Blog views
+    path('blog/', blog_views.blog_view, name='blog'),
 
     #General Views
     path('about/', TemplateView.as_view(template_name="index/about.html"), name='about'),

@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+{% block head_content %}
+<title>Blog</title>
+{% endblock head_content %}
+
+{% load static %}
+
+{% block container %}
+<div class="container d-flex pt-4">
+	<div class="col-10 col-lg-8 d-flex">
+		<ul>
+			{% for post in posts %}
+				<li>
+					<h4 class="pt-1">
+						<a href="{{ post.url }}">
+							{{ forloop.counter }}. {{ post.title }}
+						</a>
+					</h4>
+					<div class="d-flex justify-content-between pb-1">
+						<p>{{ post.description }}</p>
+						<small class="pl-2">{{ post.date }}</small>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="col-8 col-lg-4 text-right pl-4">
+			<h1>Temas</h1>
+			<ul>
+				<li><a href="#">Aprende Karel</a></li>
+				<li><a href="#">C++</a></li>
+				<li><a href="#"></li>
+				<li><a href="#">CodeBlocks</a></li>
+				<li><a href="#">Visual Studio Code</a></li>
+			</ul>
+	</div>
+</div>
+{% endblock container %}

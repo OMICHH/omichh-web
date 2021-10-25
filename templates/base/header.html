@@ -1,10 +1,9 @@
 {% load static %}
 <nav id="header" class="navbar navbar-expand-lg navbar-dark {% if pos != "back" %} fixed-top {% endif %}bg-OMICHH">
     <div class="container" >
-      <a class="navbar-brand p-0 m-0" href="#">
+      <a class="navbar-brand p-0 m-0" href="{% url 'landing' %}">
         <img src="{% if style == "primary" %}
         {% static 'img/white-OMICHH-logo.png' %}{% elif style == "secondary" %}{% static 'img/blue-OMICHH-logo.png' %}{% endif %}" class="p-0 m-0" alt="OMICHH logo">
-        
       </a>
       
         <button class="navbar-toggler burger-border" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,14 +13,14 @@
         <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav ml-auto text-right text-uppercase bold">
           <li class="nav-item">
-          <a class="nav-link" href="#">Registrarse</a>
+          <a class="nav-link" href="{% url 'singup' %}">Registrarse</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Convocatoria</a>
+            <a class="nav-link" href="{% url 'about' %}">Convocatoria</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Iniciar sesión</a>
-            </li>
+            <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+          </li>
         </ul>
         </div>
     </div>
