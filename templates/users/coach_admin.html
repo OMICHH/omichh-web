@@ -1,0 +1,64 @@
+{% extends 'base/base_secondary.html' %}
+
+{% block head_content %}
+    <title>Coach Administration</title>
+{% endblock head_content %}
+
+{% load static %}
+
+{% block container %}
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-12 col-lg-5">
+                <img src="{% static 'img/Team-amico.png' %}" class="img-fluid" alt="Team de programadores">
+            </div>
+            <div class="col mt-3">
+                {% include 'partials/search_bar.html' with  placeholder="Buscar Alumno" idInput="wanted_student" nameInput="wanted_student"%}
+                {% comment %} <div class="search-container">
+                    <form class="d-flex">
+                        <input class="form-control search-input" type="search" placeholder="Buscar Alumno" aria-label="Search">
+                        <button class="justify-content-center" type="submit">
+                            <div class="lens-search"></div>
+                        </button>
+                    </form>
+                </div> {% endcomment %}
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <td>No.</td>
+                    <td>Alumno</td>
+                    <td>Categoría</td>
+                    <td>Usuario Omegaup</td>
+                    <td>Correo</td>
+                    <td>Teléfono</td>
+                    <td>Configuración</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for student in students %}
+                <tr>
+                    <td class="text-break">{{ forloop.counter }}</td>
+                    <td>{{ student.student_user.get_full_name }}</td>
+                    <td>{{ student.category }}</td>
+                    <td class="text-break">{{ student.student_user.username }}</td>
+                    <td class="text-break">{{ student.student_user.email }}</td>
+                    <td class="text-break">{{ student.phone_of_tutor }}</td>
+                    <td class="">
+                        <div class="d-flex justify-content-center align-items-center flex-wrap">
+                            {% include 'partials/button.html' with text_content="Editar" classes="edit-button" classesContainer="button-table" %}
+                            {% include 'partials/button.html' with text_content="Eliminar" classes="delete-button" classesContainer="button-table" %}
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock container %}
