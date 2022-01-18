@@ -1,0 +1,87 @@
+{% extends 'base/base_secondary.html' %}
+
+{% block head_content %}
+    <title>Coach Administration</title>
+{% endblock head_content %}
+
+{% load static %}
+
+{% block container %}
+    <div class="container">
+        <div class="row d-flex top-title-table justify-content-center">
+            <div class="image order-2 order-md-1">
+                <img src="{% static 'img/karel_recortado_top_table.png' %}" alt="Karel Saludando" class="">
+            </div>
+            <h1 class="order-1 order-md-2 text-wrap">Consulta las fechas importantes</h1>
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <div class="table-responsive d-flex justify-content-center ">
+            <table class="table table-hover calendar" id="calendar">
+                <thead>
+                <tr>
+                    <td>Domingo</td>
+                    <td>Lunes</td>
+                    <td>Martes</td>
+                    <td>Miercoles</td>
+                    <td>Jueves</td>
+                    <td>Viernes</td>
+                    <td>Sábado</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for contestant in contestants %}
+                <tr>
+                    <td class="text-break">{{ forloop.counter }}</td>
+                    <td>{{ contestant.name }}</td>
+                    <td>{{ contestant.category }}</td>
+                    <td>{{ contestant.exam1 }}</td>
+                    <td>{{ contestant.exam2 }}</td>
+                    <td>{{ contestant.exam3 }}</td>
+                    <td>{{ contestant.exam4 }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td class="text-break"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="text-break"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="text-break"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="text-break"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+{% endblock container %}

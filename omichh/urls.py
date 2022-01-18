@@ -11,6 +11,7 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from users import views as users_views
 from blog import views as blog_views
+from events import views as events_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +27,9 @@ urlpatterns = [
     
     path('coach_admin/', users_views.coach_admin_view, name='coach_admin'),
     path('results/', users_views.results_view, name='results'),
+
+    #Events Views
+    path('calendar/', events_views.calendar_view, name='calendar'),
 
     # Blog views
     path('blog/', blog_views.blog_view, name='blog'),

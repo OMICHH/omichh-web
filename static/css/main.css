@@ -607,6 +607,7 @@ option{
 
 /* TABLES */
 .top-title-table > .image-svg,
+.top-title-table > .image,
 .top-title-table > h1{
    display: flex;
    align-items: center;
@@ -616,7 +617,8 @@ option{
    justify-content: center;
    align-items: center;
 }
-.top-title-table > .image-svg{
+.top-title-table > .image-svg,
+.top-title-table > .image{
    order: 2!important;
 }
 .top-title-table > h1
@@ -627,7 +629,7 @@ option{
 .table{
    border-collapse: unset !important;
    border-spacing: 0px;
-   border-radius:15px !important;
+   border-radius: 15px !important;
    -moz-border-radius:15px !important;
    -webkit-border-radius: 15px !important;
    padding: 0px !important;
@@ -708,7 +710,41 @@ option{
    background-color: #8b2222 !important;
    box-shadow: 0 0 0 3px #8d424280 !important;
 }
-
+.calendar{
+   width: fit-content!important;
+   table-layout: fixed!important;
+}
+.calendar thead td{
+   background-color: #0091BF !important;
+   color: #ffffff !important;
+   font-family: Noto Sans SC !important;
+   font-weight: 100 !important;
+}
+.calendar tr td{
+   width: 125px!important;
+   overflow: auto;
+}
+.calendar tr{
+   height: 76px;
+}
+.table.calendar{
+   table-layout: fixed!important;
+   border-radius: 30px !important;
+   -moz-border-radius:30px !important;
+   -webkit-border-radius: 30px !important;
+}
+.table.calendar thead td:first-child { 
+   border-top-left-radius: 21px; 
+}
+.table.calendar thead td:last-child {   
+   border-top-right-radius: 21px; 
+}
+.table.calendar tbody tr:last-child td:first-child { 
+   border-bottom-left-radius: 21px; 
+}
+.table.calendar tbody tr:last-child td:last-child { 
+   border-bottom-right-radius: 21px; 
+}
 /**/
 
 
@@ -718,14 +754,16 @@ option{
 /* Extra small devices (landscape phones, 360px and up) */
 @media (min-width: 362px) {
    .top-title-table > .image-svg,
-   .top-title-table > h1{
+   .top-title-table > h1,
+   .top-title-table > .image{
       width: fit-content;
    }
    .top-title-table{
       justify-content: flex-start;
       align-items: flex-start;
    }
-   .top-title-table > .image-svg{
+   .top-title-table > .image-svg,
+   .top-title-table > .image{
       order: 1!important;
    }
    .top-title-table > h1
